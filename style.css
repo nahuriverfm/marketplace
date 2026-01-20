@@ -106,6 +106,7 @@ header {
   border-radius: 6px;
   margin-bottom: 10px;
   object-fit: cover;
+  height: auto;
 }
 
 .item p {
@@ -120,6 +121,7 @@ header {
   font-size: 1.1rem;
 }
 
+/* BOTÓN VER MÁS */
 .item button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -191,30 +193,37 @@ header {
 
 /* RESPONSIVE */
 @media(max-width: 768px) {
+
   .layout {
     flex-direction: column;
   }
 
   .sidebar {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: block;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 10px;
   }
 
   .categorias {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
   }
 
   .categorias li {
-    flex: 1 1 40%;
+    flex: 1 1 45%;
     text-align: center;
+    margin-bottom: 5px;
   }
 
   .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: 1fr; /* un artículo por fila en móvil */
     padding: 0.5rem;
   }
 
@@ -222,3 +231,5 @@ header {
     padding: 0.8rem;
   }
 }
+
+
