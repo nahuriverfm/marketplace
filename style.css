@@ -254,5 +254,17 @@ header {
   }
 
   .item {
-    padding:
+    padding: 0.8rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .footer-right p {
+    text-align: center;
+  }
+}
 
