@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -13,10 +13,6 @@
     <div class="banner">
       <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
     </div>
-
-    <div class="logo-container">
-      <img src="images/logo.jpeg" alt="Logo" class="logo">
-    </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -24,6 +20,13 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
+
+      <!-- LOGO -->
+      <div class="sidebar-logo">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+      </div>
+
+      <!-- CATEGORÍAS -->
       <h3>Categorías</h3>
       <ul class="categorias">
         <li class="active" onclick="filtrar('all', this)">Todos</li>
@@ -36,6 +39,7 @@
         <li onclick="filtrar('otros', this)">Otros</li>
       </ul>
 
+      <!-- ESTADO -->
       <h3>Estado</h3>
       <ul class="categorias">
         <li onclick="filtrar('funcional', this)">Funcional</li>
@@ -46,50 +50,121 @@
 
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
+      <!-- Producto Retro / Para repuesto -->
       <div class="item retro para-repuesto">
         <h3>Notebook Chaplet Halikan</h3>
+        <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
         <p>Producto retro, ideal para repuestos. Funciona parcialmente.</p>
         <p class="precio">$25.000</p>
+        <button onclick="abrirModal('modal1')">Ver más</button>
       </div>
 
+      <!-- Producto Hardware funcional -->
       <div class="item hardware cpu funcional">
         <h3>CPU Intel Core i5</h3>
+        <img src="images/cpu.jpeg" alt="CPU Intel">
         <p>Funciona perfectamente, lista para usar.</p>
         <p class="precio">$55.000</p>
+        <button onclick="abrirModal('modal2')">Ver más</button>
       </div>
 
+      <!-- Consola funcional -->
       <div class="item consolas retro funcional">
         <h3>Consola Nintendo Retro</h3>
+        <img src="images/consola1.jpeg" alt="Consola Nintendo">
         <p>Funciona perfectamente, ideal para coleccionistas.</p>
         <p class="precio">$18.000</p>
+        <button onclick="abrirModal('modal3')">Ver más</button>
       </div>
 
+      <!-- Producto Otros / Scrap -->
       <div class="item otros scrap">
         <h3>Licuadora vieja</h3>
         <p>Solo piezas, para reciclaje o repuesto.</p>
         <p class="precio">$2.000</p>
+        <button onclick="abrirModal('modal4')">Ver más</button>
       </div>
 
+      <!-- Producto Otros / Funcional -->
       <div class="item otros funcional">
         <h3>Mueble usado</h3>
         <p>Funciona perfectamente, listo para usar.</p>
         <p class="precio">$5.000</p>
+        <button onclick="abrirModal('modal5')">Ver más</button>
       </div>
     </div>
 
   </div>
 
-  <!-- SCRIPT DE FILTRO -->
+  <!-- MODALES -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+      <h3>Notebook Chaplet Halikan</h3>
+      <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
+      <img src="images/notebook2.jpeg" alt="Notebook Chaplet segunda foto">
+      <p>Más detalles del producto, estado y características.</p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Notebook%20Halikan" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+      <h3>CPU Intel Core i5</h3>
+      <img src="images/cpu.jpeg" alt="CPU Intel">
+      <p>Funciona perfectamente, lista para usar.</p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20el%20CPU%20Intel%20Core%20i5" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
+      <h3>Consola Nintendo Retro</h3>
+      <img src="images/consola1.jpeg" alt="Consola Nintendo">
+      <img src="images/consola2.jpeg" alt="Consola Nintendo segunda foto">
+      <p>Funciona perfectamente, ideal para coleccionistas.</p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Consola%20Nintendo" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal4')">&times;</span>
+      <h3>Licuadora vieja</h3>
+      <p>Solo piezas, para reciclaje o repuesto.</p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Licuadora" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal5')">&times;</span>
+      <h3>Mueble usado</h3>
+      <p>Funciona perfectamente, listo para usar.</p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20el%20Mueble" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
   <script>
     function filtrar(tag, elem) {
       const items = document.querySelectorAll('.item');
       const botones = document.querySelectorAll('.categorias li');
-
-      // Marca el botón activo
       botones.forEach(b => b.classList.remove('active'));
       elem.classList.add('active');
 
-      // Muestra / oculta items
       if(tag === 'all') {
         items.forEach(item => item.style.display = 'block');
         return;
@@ -99,7 +174,23 @@
         item.style.display = item.classList.contains(tag) ? 'block' : 'none';
       });
     }
+
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if(event.target == modal) modal.style.display = 'none';
+      });
+    }
   </script>
 
 </body>
 </html>
+
