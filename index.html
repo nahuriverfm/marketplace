@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -14,37 +14,6 @@
       <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
     </div>
   </header>
-
-  <!-- BOTÓN FILTRO (visible en móvil) -->
-  <div class="btn-filtro" onclick="abrirFiltro()">&#9776; Filtrar</div>
-
-  <!-- PANEL DESLIZABLE FILTROS -->
-  <div class="panel-filtro" id="panelFiltro">
-    <span class="cerrar-panel" onclick="cerrarFiltro()">&times;</span>
-
-    <div class="menu-desplegable">
-      <div class="menu-titulo">Categorías</div>
-      <ul class="categorias">
-        <li class="active" onclick="filtrar('all', this)">Todos</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('consolas', this)">Consolas</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('graficas', this)">Gráficas</li>
-        <li onclick="filtrar('peri', this)">Periféricos</li>
-        <li onclick="filtrar('otros', this)">Otros</li>
-      </ul>
-    </div>
-
-    <div class="menu-desplegable">
-      <div class="menu-titulo">Estado</div>
-      <ul class="categorias">
-        <li onclick="filtrar('funcional', this)">Funcional</li>
-        <li onclick="filtrar('para-repuesto', this)">Para repuesto</li>
-        <li onclick="filtrar('scrap', this)">Scrap</li>
-      </ul>
-    </div>
-  </div>
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="layout">
@@ -57,23 +26,30 @@
         <img src="images/logo.jpeg" alt="Logo" class="logo">
       </div>
 
-      <!-- Categorías visibles en escritorio -->
-      <ul class="categorias escritorio">
-        <li class="active" onclick="filtrar('all', this)">Todos</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('consolas', this)">Consolas</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('graficas', this)">Gráficas</li>
-        <li onclick="filtrar('peri', this)">Periféricos</li>
-        <li onclick="filtrar('otros', this)">Otros</li>
-      </ul>
+      <!-- PANEL DE CONTENIDO -->
+      <div class="filtro-panel">
+        <!-- Contenido siempre visible -->
+        <div class="filtro-titulo">Contenido</div>
+        <ul class="categorias filtro-lista open">
+          <li class="active" onclick="filtrar('all', this)">Todos</li>
+          <li onclick="filtrar('retro', this)">Retro</li>
+          <li onclick="filtrar('consolas', this)">Consolas</li>
+          <li onclick="filtrar('cpu', this)">CPU</li>
+          <li onclick="filtrar('mother', this)">Mother</li>
+          <li onclick="filtrar('graficas', this)">Gráficas</li>
+          <li onclick="filtrar('peri', this)">Periféricos</li>
+          <li onclick="filtrar('otros', this)">Otros</li>
+        </ul>
 
-      <ul class="categorias escritorio">
-        <li onclick="filtrar('funcional', this)">Funcional</li>
-        <li onclick="filtrar('para-repuesto', this)">Para repuesto</li>
-        <li onclick="filtrar('scrap', this)">Scrap</li>
-      </ul>
+        <!-- Estado desplegable -->
+        <div class="filtro-titulo" onclick="toggleEstado()">Estado ▼</div>
+        <ul class="categorias filtro-lista" id="estado-lista">
+          <li onclick="filtrar('funcional', this)">Funcional</li>
+          <li onclick="filtrar('para-repuesto', this)">Para repuesto</li>
+          <li onclick="filtrar('scrap', this)">Scrap</li>
+        </ul>
+      </div>
+
     </aside>
 
     <!-- GRID DE PRODUCTOS -->
@@ -118,8 +94,29 @@
     </div>
   </div>
 
-  <!-- MODALES (igual que antes) -->
-  <!-- ... (mantengo los modales tal cual) ... -->
+  <!-- MODALES -->
+  <div id="modal1" class="modal" data-nombre="Notebook Chaplet Halikan">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+      <h3>Notebook Chaplet Halikan</h3>
+      <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
+      <img src="images/notebook2.jpeg" alt="Notebook Chaplet segunda foto">
+      <p>Más detalles del producto, estado y características.</p>
+      <a href="#" class="wpp-link" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal" data-nombre="CPU Intel Core i5">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+      <h3>CPU Intel Core i5</h3>
+      <img src="images/cpu.jpeg" alt="CPU Intel">
+      <p>Funciona perfectamente, lista para usar.</p>
+      <a href="#" class="wpp-link" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Repetir modales según necesites -->
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -134,6 +131,7 @@
 
   <!-- SCRIPT -->
   <script>
+    // Filtrado de productos
     function filtrar(tag, elem) {
       const items = document.querySelectorAll('.item');
       const botones = document.querySelectorAll('.categorias li');
@@ -150,8 +148,19 @@
       });
     }
 
-    function abrirModal(id) { document.getElementById(id).style.display = 'block'; }
-    function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
+    // Modales
+    function abrirModal(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = 'block';
+      const nombreArticulo = modal.dataset.nombre;
+      const wppLink = modal.querySelector('.wpp-link');
+      const mensaje = `Hola, quiero este artículo: ${nombreArticulo}`;
+      wppLink.href = `https://wa.me/5491123456789?text=${encodeURIComponent(mensaje)}`;
+    }
+
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
 
     window.onclick = function(event) {
       const modals = document.querySelectorAll('.modal');
@@ -160,19 +169,13 @@
       });
     }
 
-    // PANEL DESLIZABLE FILTROS
-    function abrirFiltro() { document.getElementById('panelFiltro').classList.add('show'); }
-    function cerrarFiltro() { document.getElementById('panelFiltro').classList.remove('show'); }
-
-    const titulos = document.querySelectorAll('.menu-titulo');
-    titulos.forEach(titulo => {
-      titulo.addEventListener('click', () => {
-        const lista = titulo.nextElementSibling;
-        lista.style.display = (lista.style.display === "block") ? "none" : "block";
-      });
-    });
+    // Estado desplegable tipo ChatGPT
+    function toggleEstado() {
+      document.getElementById('estado-lista').classList.toggle('open');
+    }
   </script>
 
 </body>
 </html>
+
 
