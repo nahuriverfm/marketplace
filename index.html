@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -50,7 +50,6 @@
 
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
-      <!-- Producto Retro / Para repuesto -->
       <div class="item retro para-repuesto">
         <h3>Notebook Chaplet Halikan</h3>
         <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
@@ -59,7 +58,6 @@
         <button onclick="abrirModal('modal1')">Ver más</button>
       </div>
 
-      <!-- Producto Hardware funcional -->
       <div class="item hardware cpu funcional">
         <h3>CPU Intel Core i5</h3>
         <img src="images/cpu.jpeg" alt="CPU Intel">
@@ -68,7 +66,6 @@
         <button onclick="abrirModal('modal2')">Ver más</button>
       </div>
 
-      <!-- Consola funcional -->
       <div class="item consolas retro funcional">
         <h3>Consola Nintendo Retro</h3>
         <img src="images/consola1.jpeg" alt="Consola Nintendo">
@@ -77,7 +74,6 @@
         <button onclick="abrirModal('modal3')">Ver más</button>
       </div>
 
-      <!-- Producto Otros / Scrap -->
       <div class="item otros scrap">
         <h3>Licuadora vieja</h3>
         <p>Solo piezas, para reciclaje o repuesto.</p>
@@ -85,7 +81,6 @@
         <button onclick="abrirModal('modal4')">Ver más</button>
       </div>
 
-      <!-- Producto Otros / Funcional -->
       <div class="item otros funcional">
         <h3>Mueble usado</h3>
         <p>Funciona perfectamente, listo para usar.</p>
@@ -93,10 +88,9 @@
         <button onclick="abrirModal('modal5')">Ver más</button>
       </div>
     </div>
-
   </div>
 
-  <!-- MODALES -->
+  <!-- MODALES (siempre fuera del grid) -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
@@ -193,4 +187,3 @@
 
 </body>
 </html>
-
