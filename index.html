@@ -43,10 +43,11 @@
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
 
-      <!-- EJEMPLO DE ARTÍCULO -->
+      <!-- ARTÍCULO 1: Notebook Samsung -->
       <div class="item retro para-repuesto">
         <h3>Notebook Samsung NP-NC110P</h3>
-        <img src="images/samsung.jpeg" alt="Notebook Samsung NP-NC110P">
+        <!-- Imagen: subir a images/samsung_np_nc110p.jpeg -->
+        <img src="images/samsung_np_nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
         <p>
           Prende, da imagen y entra a BIOS sin problema.<br>
           No tiene disco duro ni cargador.<br>
@@ -55,24 +56,57 @@
           <strong>Modelo:</strong> NP-NC110P<br>
           <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
           <strong>RAM:</strong> 1 GB<br>
-          <strong>Estado:</strong> Para repuesto / scrap<br>
+          <strong>Estado:</strong> Para repuesto / sin disco ni cargador<br>
           <strong>Da imagen</strong>
         </p>
         <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-samsung')">Ver más</button>
+        <button onclick="abrirModal('modal-samsung_np_nc110p')">Ver más</button>
       </div>
 
-      <!-- Agregar aquí los demás artículos siguiendo la misma estructura -->
+      <!-- ARTÍCULO 2: Cassette + CD Luis Miguel -->
+      <div class="item retro para-repuesto">
+        <h3>Cassette + CD Luis Miguel – Lote musical</h3>
+        <!-- Imagen: subir a images/cassette_cd_luis_miguel.jpeg -->
+        <img src="images/cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel – Lote musical">
+        <p>
+          2 items juntos:<br>
+          • Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>
+          • CD ”Romances” – Luis Miguel (original, usado)<br>
+          Ambos en buen estado general.<br>
+          <strong>Precio por el lote:</strong> $15.000
+        </p>
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-cassette_cd_luis_miguel')">Ver más</button>
+      </div>
+
+      <!-- ARTÍCULO 3: Notebook Dell Inspiron 1525 -->
+      <div class="item retro para-repuesto">
+        <h3>Notebook Dell Inspiron 1525 – Funciona y da imagen</h3>
+        <!-- Imagen: subir a images/dell_inspiron_1525.jpeg -->
+        <img src="images/dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+        <p>
+          Enciende correctamente y da imagen sin problema.<br>
+          Incluye memoria RAM instalada.<br>
+          Ideal para repuestos, restaurar o usar con disco propio.<br>
+          ❌ No tiene disco duro.<br>
+          ❌ No incluye batería ni cargador.<br>
+          ⚠️ Detalle estético: la carcasa tiene una rotura cerca de la bisagra, pero no afecta el funcionamiento.
+        </p>
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-dell_inspiron_1525')">Ver más</button>
+      </div>
 
     </div>
   </div>
 
   <!-- MODALES -->
-  <div id="modal-samsung" class="modal">
+
+  <!-- Modal Notebook Samsung -->
+  <div id="modal-samsung_np_nc110p" class="modal">
     <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
+      <span class="cerrar" onclick="cerrarModal('modal-samsung_np_nc110p')">&times;</span>
       <h3>Notebook Samsung NP-NC110P</h3>
-      <img src="images/samsung.jpeg" alt="Notebook Samsung NP-NC110P">
+      <img src="images/samsung_np_nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
       <p>
         Prende, da imagen y entra a BIOS sin problema.<br>
         No tiene disco duro ni cargador.<br>
@@ -81,18 +115,51 @@
         <strong>Modelo:</strong> NP-NC110P<br>
         <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
         <strong>RAM:</strong> 1 GB<br>
-        <strong>Estado:</strong> Para repuesto / scrap<br>
+        <strong>Estado:</strong> Para repuesto / sin disco ni cargador<br>
         <strong>Da imagen</strong>
       </p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Notebook%20Samsung%20NP-NC110P" target="_blank">
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Notebook%20Samsung%20NP-NC110P" target="_blank">
         Contactar por WhatsApp
       </a>
-      <p style="margin-top:10px;">
-        <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">
-          Ver más artículos en Facebook Marketplace
-        </a>
+    </div>
+  </div>
+
+  <!-- Modal Cassette + CD Luis Miguel -->
+  <div id="modal-cassette_cd_luis_miguel" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal-cassette_cd_luis_miguel')">&times;</span>
+      <h3>Cassette + CD Luis Miguel – Lote musical</h3>
+      <img src="images/cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel – Lote musical">
+      <p>
+        2 items juntos:<br>
+        • Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>
+        • CD ”Romances” – Luis Miguel (original, usado)<br>
+        Ambos en buen estado general.<br>
+        <strong>Precio por el lote:</strong> $15.000
       </p>
-      <img src="images/ac53bd59-1042-4282-bd2b-88c519b71047.jpeg" alt="QR WhatsApp" style="max-width:150px; margin-top:10px;">
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Cassette%20+%20CD%20Luis%20Miguel" target="_blank">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal Notebook Dell Inspiron 1525 -->
+  <div id="modal-dell_inspiron_1525" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal-dell_inspiron_1525')">&times;</span>
+      <h3>Notebook Dell Inspiron 1525 – Funciona y da imagen</h3>
+      <img src="images/dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+      <p>
+        Enciende correctamente y da imagen sin problema.<br>
+        Incluye memoria RAM instalada.<br>
+        Ideal para repuestos, restaurar o usar con disco propio.<br>
+        ❌ No tiene disco duro.<br>
+        ❌ No incluye batería ni cargador.<br>
+        ⚠️ Detalle estético: la carcasa tiene una rotura cerca de la bisagra, pero no afecta el funcionamiento.
+      </p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Notebook%20Dell%20Inspiron%201525" target="_blank">
+        Contactar por WhatsApp
+      </a>
     </div>
   </div>
 
