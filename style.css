@@ -18,20 +18,10 @@ header {
   object-fit: cover;
 }
 
-.logo-container {
-  padding: 15px;
-}
-
-.logo {
-  height: 80px;
-  display: block;
-  margin: 0 auto;
-}
-
 /* LAYOUT */
 .layout {
   display: flex;
-  min-height: calc(100vh - 280px); /* Ajusta según banner+logo */
+  min-height: calc(100vh - 200px);
 }
 
 /* SIDEBAR */
@@ -42,6 +32,18 @@ header {
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
 }
 
+/* LOGO EN SIDEBAR */
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sidebar-logo .logo {
+  height: 80px;
+  display: inline-block;
+}
+
+/* CATEGORÍAS */
 .sidebar h3 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -71,7 +73,7 @@ header {
   font-weight: bold;
 }
 
-/* GRID DE PRODUCTOS */
+/* GRID PRODUCTOS */
 .grid-container {
   flex: 1;
   display: grid;
@@ -107,6 +109,46 @@ header {
   font-size: 1.1rem;
 }
 
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: white;
+  color: black;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: black;
+}
+
 /* RESPONSIVE */
 @media(max-width: 768px) {
   .layout {
@@ -117,7 +159,7 @@ header {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .categorias {
@@ -131,3 +173,4 @@ header {
     text-align: center;
   }
 }
+
