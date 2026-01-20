@@ -26,9 +26,9 @@
         <img src="images/logo.jpeg" alt="Logo" class="logo">
       </div>
 
-      <!-- CATEGORÍAS (DESPLEGADO POR DEFECTO) -->
-      <ul class="categorias filtro-lista open">
-        <li class="active" onclick="filtrar('all', this)">Todos</li>
+      <!-- CATEGORÍAS -->
+      <ul class="categorias">
+        <li onclick="filtrar('all', this)" class="active">Todos</li>
         <li onclick="filtrar('retro', this)">Retro</li>
         <li onclick="filtrar('consolas', this)">Consolas</li>
         <li onclick="filtrar('cpu', this)">CPU</li>
@@ -42,111 +42,64 @@
 
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
+
+      <!-- EJEMPLO DE ARTÍCULO -->
       <div class="item retro para-repuesto">
-        <h3>Notebook Chaplet Halikan</h3>
-        <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
-        <p>Producto retro, ideal para repuestos. Funciona parcialmente.</p>
-        <p class="precio">$25.000</p>
-        <button onclick="abrirModal('modal1')">Ver más</button>
+        <h3>Notebook Samsung NP-NC110P</h3>
+        <img src="images/samsung.jpeg" alt="Notebook Samsung NP-NC110P">
+        <p>
+          Prende, da imagen y entra a BIOS sin problema.<br>
+          No tiene disco duro ni cargador.<br>
+          Tiene memoria RAM y batería colocada.<br>
+          Ideal para repuestos o restaurar.<br><br>
+          <strong>Modelo:</strong> NP-NC110P<br>
+          <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
+          <strong>RAM:</strong> 1 GB<br>
+          <strong>Estado:</strong> Para repuesto / scrap<br>
+          <strong>Da imagen</strong>
+        </p>
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-samsung')">Ver más</button>
       </div>
 
-      <div class="item hardware cpu funcional">
-        <h3>CPU Intel Core i5</h3>
-        <img src="images/cpu.jpeg" alt="CPU Intel">
-        <p>Funciona perfectamente, lista para usar.</p>
-        <p class="precio">$55.000</p>
-        <button onclick="abrirModal('modal2')">Ver más</button>
-      </div>
+      <!-- Agregar aquí los demás artículos siguiendo la misma estructura -->
 
-      <div class="item consolas retro funcional">
-        <h3>Consola Nintendo Retro</h3>
-        <img src="images/consola1.jpeg" alt="Consola Nintendo">
-        <p>Funciona perfectamente, ideal para coleccionistas.</p>
-        <p class="precio">$18.000</p>
-        <button onclick="abrirModal('modal3')">Ver más</button>
-      </div>
-
-      <div class="item otros scrap">
-        <h3>Licuadora vieja</h3>
-        <p>Solo piezas, para reciclaje o repuesto.</p>
-        <p class="precio">$2.000</p>
-        <button onclick="abrirModal('modal4')">Ver más</button>
-      </div>
-
-      <div class="item otros funcional">
-        <h3>Mueble usado</h3>
-        <p>Funciona perfectamente, listo para usar.</p>
-        <p class="precio">$5.000</p>
-        <button onclick="abrirModal('modal5')">Ver más</button>
-      </div>
     </div>
   </div>
 
   <!-- MODALES -->
-  <div id="modal1" class="modal">
+  <div id="modal-samsung" class="modal">
     <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
-      <h3>Notebook Chaplet Halikan</h3>
-      <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
-      <img src="images/notebook2.jpeg" alt="Notebook Chaplet segunda foto">
-      <p>Más detalles del producto, estado y características.</p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Notebook%20Halikan" target="_blank">
+      <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
+      <h3>Notebook Samsung NP-NC110P</h3>
+      <img src="images/samsung.jpeg" alt="Notebook Samsung NP-NC110P">
+      <p>
+        Prende, da imagen y entra a BIOS sin problema.<br>
+        No tiene disco duro ni cargador.<br>
+        Tiene memoria RAM y batería colocada.<br>
+        Ideal para repuestos o restaurar.<br><br>
+        <strong>Modelo:</strong> NP-NC110P<br>
+        <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
+        <strong>RAM:</strong> 1 GB<br>
+        <strong>Estado:</strong> Para repuesto / scrap<br>
+        <strong>Da imagen</strong>
+      </p>
+      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Notebook%20Samsung%20NP-NC110P" target="_blank">
         Contactar por WhatsApp
       </a>
-    </div>
-  </div>
-
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
-      <h3>CPU Intel Core i5</h3>
-      <img src="images/cpu.jpeg" alt="CPU Intel">
-      <p>Funciona perfectamente, lista para usar.</p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20el%20CPU%20Intel%20Core%20i5" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
-      <h3>Consola Nintendo Retro</h3>
-      <img src="images/consola1.jpeg" alt="Consola Nintendo">
-      <img src="images/consola2.jpeg" alt="Consola Nintendo segunda foto">
-      <p>Funciona perfectamente, ideal para coleccionistas.</p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Consola%20Nintendo" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal4')">&times;</span>
-      <h3>Licuadora vieja</h3>
-      <p>Solo piezas, para reciclaje o repuesto.</p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20la%20Licuadora" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div id="modal5" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal5')">&times;</span>
-      <h3>Mueble usado</h3>
-      <p>Funciona perfectamente, listo para usar.</p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20el%20Mueble" target="_blank">
-        Contactar por WhatsApp
-      </a>
+      <p style="margin-top:10px;">
+        <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">
+          Ver más artículos en Facebook Marketplace
+        </a>
+      </p>
+      <img src="images/ac53bd59-1042-4282-bd2b-88c519b71047.jpeg" alt="QR WhatsApp" style="max-width:150px; margin-top:10px;">
     </div>
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-left">
-      <a href="https://facebook.com/tu-pagina" target="_blank">Facebook</a> |
+      <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
       <a href="https://wa.me/5491123456789" target="_blank">WhatsApp</a>
     </div>
     <div class="footer-right">
