@@ -33,21 +33,27 @@ header {
 
 /* Categorías/etiquetas */
 .categorias {
-  margin-top: 10px;
+  margin-top: 15px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  flex-direction: column; /* uno debajo del otro */
+  gap: 8px;
+  width: 220px;
 }
 
+
 .categoria-btn {
+ .categoria-btn {
   background: #9932CC;
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
+  padding: 10px 12px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
+  text-align: left;
+  width: 100%;
 }
+
 
 .categoria-btn:hover {
   background: #8A2BE2;
