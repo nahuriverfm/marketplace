@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -15,7 +15,6 @@
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <div class="layout">
 
     <!-- SIDEBAR -->
@@ -26,10 +25,10 @@
         <img src="images/logo.jpeg" alt="Logo" class="logo">
       </div>
 
-      <!-- FILTRO -->
+      <!-- FILTRO DESPLEGABLE -->
       <div class="filtro-panel">
-        <div class="filtro-titulo">Filtro ▼</div>
-        <ul class="categorias filtro-lista open">
+        <div class="filtro-titulo" onclick="toggleFiltro()">Contenido ▼</div>
+        <ul class="categorias filtro-lista">
           <li class="active" onclick="filtrar('all', this)">Todos</li>
           <li onclick="filtrar('retro', this)">Retro</li>
           <li onclick="filtrar('consolas', this)">Consolas</li>
@@ -148,6 +147,11 @@
 
     function cerrarModal(id) {
       document.getElementById(id).style.display = 'none';
+    }
+
+    function toggleFiltro() {
+      const lista = document.querySelector('.filtro-lista');
+      lista.classList.toggle('open');
     }
 
     window.onclick = function(event) {
