@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 
@@ -26,10 +26,9 @@
         <img src="images/logo.jpeg" alt="Logo" class="logo">
       </div>
 
-      <!-- PANEL DE CONTENIDO -->
+      <!-- FILTRO -->
       <div class="filtro-panel">
-        <!-- Contenido siempre visible -->
-        <div class="filtro-titulo">Contenido</div>
+        <div class="filtro-titulo">Filtro ▼</div>
         <ul class="categorias filtro-lista open">
           <li class="active" onclick="filtrar('all', this)">Todos</li>
           <li onclick="filtrar('retro', this)">Retro</li>
@@ -40,21 +39,13 @@
           <li onclick="filtrar('peri', this)">Periféricos</li>
           <li onclick="filtrar('otros', this)">Otros</li>
         </ul>
-
-        <!-- Estado desplegable -->
-        <div class="filtro-titulo" onclick="toggleEstado()">Estado ▼</div>
-        <ul class="categorias filtro-lista" id="estado-lista">
-          <li onclick="filtrar('funcional', this)">Funcional</li>
-          <li onclick="filtrar('para-repuesto', this)">Para repuesto</li>
-          <li onclick="filtrar('scrap', this)">Scrap</li>
-        </ul>
       </div>
 
     </aside>
 
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
-      <div class="item retro para-repuesto">
+      <div class="item retro">
         <h3>Notebook Chaplet Halikan</h3>
         <img src="images/notebook1.jpeg" alt="Notebook Chaplet">
         <p>Producto retro, ideal para repuestos. Funciona parcialmente.</p>
@@ -62,7 +53,7 @@
         <button onclick="abrirModal('modal1')">Ver más</button>
       </div>
 
-      <div class="item hardware cpu funcional">
+      <div class="item cpu">
         <h3>CPU Intel Core i5</h3>
         <img src="images/cpu.jpeg" alt="CPU Intel">
         <p>Funciona perfectamente, lista para usar.</p>
@@ -70,7 +61,7 @@
         <button onclick="abrirModal('modal2')">Ver más</button>
       </div>
 
-      <div class="item consolas retro funcional">
+      <div class="item consolas retro">
         <h3>Consola Nintendo Retro</h3>
         <img src="images/consola1.jpeg" alt="Consola Nintendo">
         <p>Funciona perfectamente, ideal para coleccionistas.</p>
@@ -78,20 +69,21 @@
         <button onclick="abrirModal('modal3')">Ver más</button>
       </div>
 
-      <div class="item otros scrap">
+      <div class="item otros">
         <h3>Licuadora vieja</h3>
         <p>Solo piezas, para reciclaje o repuesto.</p>
         <p class="precio">$2.000</p>
         <button onclick="abrirModal('modal4')">Ver más</button>
       </div>
 
-      <div class="item otros funcional">
+      <div class="item otros">
         <h3>Mueble usado</h3>
         <p>Funciona perfectamente, listo para usar.</p>
         <p class="precio">$5.000</p>
         <button onclick="abrirModal('modal5')">Ver más</button>
       </div>
     </div>
+
   </div>
 
   <!-- MODALES -->
@@ -116,8 +108,6 @@
     </div>
   </div>
 
-  <!-- Repetir modales según necesites -->
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-left">
@@ -131,7 +121,6 @@
 
   <!-- SCRIPT -->
   <script>
-    // Filtrado de productos
     function filtrar(tag, elem) {
       const items = document.querySelectorAll('.item');
       const botones = document.querySelectorAll('.categorias li');
@@ -148,7 +137,6 @@
       });
     }
 
-    // Modales
     function abrirModal(id) {
       const modal = document.getElementById(id);
       modal.style.display = 'block';
@@ -168,14 +156,7 @@
         if(event.target == modal) modal.style.display = 'none';
       });
     }
-
-    // Estado desplegable tipo ChatGPT
-    function toggleEstado() {
-      document.getElementById('estado-lista').classList.toggle('open');
-    }
   </script>
 
 </body>
 </html>
-
-
