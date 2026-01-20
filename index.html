@@ -4,277 +4,265 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="banner">
-      <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
-    </div>
-  </header>
-
-  <!-- LAYOUT -->
-  <div class="layout">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sidebar-logo">
-        <img src="images/logo.jpeg" alt="Logo" class="logo">
-      </div>
-      <ul class="categorias">
-        <li onclick="filtrar('all', this)" class="active">Todos</li>
-        <li onclick="filtrar('notebook/netbook', this)">Notebook/Netbook</li>
-        <li onclick="filtrar('lote', this)">Lote</li>
-        <li onclick="filtrar('oferta', this)">Oferta</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('scrap', this)">Scrap</li>
-        <li onclick="filtrar('consola', this)">Consola</li>
-        <li onclick="filtrar('grafica', this)">Gráfica</li>
-        <li onclick="filtrar('periferico', this)">Periférico</li>
-        <li onclick="filtrar('procesadores', this)">Procesadores</li>
-        <li onclick="filtrar('disco', this)">Disco</li>
-      </ul>
-    </aside>
-
-    <!-- GRID DE PRODUCTOS -->
-    <div class="grid-container">
-
-      <!-- Aquí van todos los artículos con título, foto y botón Ver más -->
-      <!-- Notebook Samsung -->
-      <div class="item notebook/netbook">
-        <h3>Notebook Samsung NP-NC110P</h3>
-        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-        <button onclick="abrirModal('modal_samsung')">Ver más</button>
-      </div>
-
-      <!-- Cassette + CD -->
-      <div class="item lote retro">
-        <h3>Cassette + CD Luis Miguel</h3>
-        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-        <button onclick="abrirModal('modal_luis_miguel')">Ver más</button>
-      </div>
-
-      <!-- Notebook Dell -->
-      <div class="item notebook/netbook">
-        <h3>Notebook Dell Inspiron 1525</h3>
-        <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-        <button onclick="abrirModal('modal_dell')">Ver más</button>
-      </div>
-
-      <!-- CPU AMD Phenom X2 -->
-      <div class="item cpu">
-        <h3>CPU AMD Phenom X2</h3>
-        <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
-        <button onclick="abrirModal('modal_cpu_phenom')">Ver más</button>
-      </div>
-
-      <!-- CPU Intel Core 2 Quad -->
-      <div class="item cpu">
-        <h3>CPU Intel Core 2 Quad</h3>
-        <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
-        <button onclick="abrirModal('modal_cpu_core2')">Ver más</button>
-      </div>
-
-      <!-- Asus Strix GL702V -->
-      <div class="item notebook/netbook scrap">
-        <h3>Asus Strix GL702V – Solo carcasa</h3>
-        <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
-        <button onclick="abrirModal('modal_asus_strix')">Ver más</button>
-      </div>
-
-      <!-- Placa madre MSI retro -->
-      <div class="item retro">
-        <h3>Placa madre MSI MS7030 Neo + Athlon 64</h3>
-        <img src="images/msi_ms7030_athlon64.jpeg" alt="Placa madre MSI MS7030 Neo + Athlon 64">
-        <button onclick="abrirModal('modal_msi_athlon')">Ver más</button>
-      </div>
-
-      <!-- Lote 6 placas de sonido -->
-      <div class="item lote">
-        <h3>Lote 6 placas de sonido</h3>
-        <img src="images/lote_6_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
-        <button onclick="abrirModal('modal_lote_placas_sonido')">Ver más</button>
-      </div>
-
-      <!-- Lote 6 netbooks -->
-      <div class="item netbook lote">
-        <h3>Lote 6 netbooks de gobierno</h3>
-        <img src="images/lote_6_netbooks.jpeg" alt="Lote 6 netbooks de gobierno">
-        <button onclick="abrirModal('modal_lote_6_netbooks')">Ver más</button>
-      </div>
-
-      <!-- Lote notebooks varias marcas -->
-      <div class="item notebook lote">
-        <h3>Lote notebooks varias marcas</h3>
-        <img src="images/lote_notebooks_varias_marcas.jpeg" alt="Lote notebooks varias marcas">
-        <button onclick="abrirModal('modal_lote_notebooks')">Ver más</button>
-      </div>
-
-      <!-- Lote PS2 Slim -->
-      <div class="item consola lote">
-        <h3>Lote PS2 Slim</h3>
-        <img src="images/lote_ps2_slim.jpeg" alt="Lote PS2 Slim">
-        <button onclick="abrirModal('modal_lote_ps2')">Ver más</button>
-      </div>
-
-      <!-- Lote placas madre retro -->
-      <div class="item retro lote">
-        <h3>Lote placas madre retro</h3>
-        <img src="images/lote_motherboards_retro.jpeg" alt="Lote placas madre retro">
-        <button onclick="abrirModal('modal_lote_motherboards_retro')">Ver más</button>
-      </div>
-
-      <!-- Lote x4 Motherboards -->
-      <div class="item mother scrap lote">
-        <h3>Lote x4 Motherboards</h3>
-        <img src="images/lote_4_motherboards.jpeg" alt="Lote x4 Motherboards">
-        <button onclick="abrirModal('modal_lote_4_motherboards')">Ver más</button>
-      </div>
-
-      <!-- Motherboard SiS 530 + AMD K6 -->
-      <div class="item retro">
-        <h3>Motherboard SiS 530 + AMD K6</h3>
-        <img src="images/mother_sis530_amd_k6.jpeg" alt="Motherboard SiS 530 + AMD K6">
-        <button onclick="abrirModal('modal_mother_sis')">Ver más</button>
-      </div>
-
-      <!-- Motherboard PCPartner -->
-      <div class="item retro">
-        <h3>Motherboard PCPartner 35-7008-11</h3>
-        <img src="images/mother_pcpartner_35-7008-11.jpeg" alt="Motherboard PCPartner 35-7008-11">
-        <button onclick="abrirModal('modal_mother_pcpartner')">Ver más</button>
-      </div>
-
-      <!-- Sound Blaster 16 + Parlantes -->
-      <div class="item retro">
-        <h3>Sound Blaster 16 + Parlantes Creative</h3>
-        <img src="images/soundblaster16_parlantes_creative.jpeg" alt="Sound Blaster 16 + Parlantes Creative">
-        <button onclick="abrirModal('modal_soundblaster')">Ver más</button>
-      </div>
-
-      <!-- IBM ThinkPad T30 + R40 -->
-      <div class="item notebook retro">
-        <h3>IBM ThinkPad T30 + R40</h3>
-        <img src="images/ibm_thinkpad_t30_r40.jpeg" alt="IBM ThinkPad T30 + R40">
-        <button onclick="abrirModal('modal_ibm_thinkpad')">Ver más</button>
-      </div>
-
-      <!-- Lote placas de video -->
-      <div class="item grafica lote">
-        <h3>Lote placas de video</h3>
-        <img src="images/lote_2_placas_video.jpeg" alt="Lote placas de video">
-        <button onclick="abrirModal('modal_lote_placas_video')">Ver más</button>
-      </div>
-
-      <!-- Lote monitores -->
-      <div class="item periferico lote">
-        <h3>Lote monitores Philips y BGH</h3>
-        <img src="images/lote_monitores_philips_bgh.jpeg" alt="Lote monitores Philips y BGH">
-        <button onclick="abrirModal('modal_lote_monitores')">Ver más</button>
-      </div>
-
-      <!-- Lote gabinetes -->
-      <div class="item lote">
-        <h3>Lote gabinetes blancos retro</h3>
-        <img src="images/lote_gabinetes_blancos_retro.jpeg" alt="Lote gabinetes blancos retro">
-        <button onclick="abrirModal('modal_lote_gabinetes')">Ver más</button>
-      </div>
-
-      <!-- Lote auriculares + parlante -->
-      <div class="item lote periferico">
-        <h3>Lote auriculares + parlante</h3>
-        <img src="images/lote_auriculares_parlante.jpeg" alt="Lote auriculares + parlante">
-        <button onclick="abrirModal('modal_lote_auriculares')">Ver más</button>
-      </div>
-
-      <!-- Procesadores Intel Socket 1155 -->
-      <div class="item procesadores">
-        <h3>Procesadores Intel Socket 1155</h3>
-        <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel Socket 1155">
-        <button onclick="abrirModal('modal_procesadores')">Ver más</button>
-      </div>
-
-      <!-- Discos rígidos HDD -->
-      <div class="item disco">
-        <h3>Discos rígidos HDD</h3>
-        <img src="images/discos_hdd_buen_estado.jpeg" alt="Discos rígidos HDD">
-        <button onclick="abrirModal('modal_hdd')">Ver más</button>
-      </div>
-
-    </div>
+<!-- HEADER -->
+<header>
+  <div class="banner">
+    <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
   </div>
+</header>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
-      <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
+<!-- CONTENIDO PRINCIPAL -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-logo">
+      <img src="images/logo.jpeg" alt="Logo" class="logo">
     </div>
-    <div class="footer-right">
-      <p>“La paciencia y la constancia traen grandes resultados.”</p>
-    </div>
-  </footer>
 
-  <!-- MODALES COMPLETOS -->
-  <!-- Cada modal sigue este patrón: título, foto, descripción completa y botón WhatsApp -->
+    <ul class="categorias">
+      <li onclick="filtrar('all', this)" class="active">Todos</li>
+      <li onclick="filtrar('notebook', this)">Notebook/Netbook</li>
+      <li onclick="filtrar('lote', this)">Lote</li>
+      <li onclick="filtrar('oferta', this)">Oferta</li>
+      <li onclick="filtrar('retro', this)">Retro</li>
+      <li onclick="filtrar('cpu', this)">CPU</li>
+      <li onclick="filtrar('mother', this)">Mother</li>
+      <li onclick="filtrar('scrap', this)">Scrap</li>
+      <li onclick="filtrar('consola', this)">Consola</li>
+      <li onclick="filtrar('grafica', this)">Gráfica</li>
+      <li onclick="filtrar('periferico', this)">Periférico</li>
+      <li onclick="filtrar('procesadores', this)">Procesadores</li>
+      <li onclick="filtrar('disco', this)">Disco</li>
+    </ul>
+  </aside>
 
-  <!-- Notebook Samsung -->
-  <div id="modal_samsung" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal_samsung')">&times;</span>
+  <!-- GRID DE PRODUCTOS -->
+  <div class="grid-container">
+
+    <!-- Notebook Samsung NP-NC110P -->
+    <div class="item notebook">
       <h3>Notebook Samsung NP-NC110P</h3>
       <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-      <p>Prende, da imagen y entra a BIOS sin problema.<br>
-      No tiene disco duro ni cargador.<br>
-      Tiene memoria RAM y batería colocada.<br>
-      Ideal para repuestos o restaurar.<br>
-      <strong>Modelo:</strong> NP-NC110P<br>
-      <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
-      <strong>RAM:</strong> 1 GB<br>
-      Sin disco / sin cargador<br>
-      Da imagen<br>
-      💰 Precio: $15.000</p>
-      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20la%20Notebook%20Samsung%20NP-NC110P" target="_blank">Contactar por WhatsApp</a>
+      <button onclick="abrirModal('modal_samsung')">Ver más</button>
     </div>
+
+    <!-- Cassette + CD Luis Miguel -->
+    <div class="item lote">
+      <h3>Cassette + CD Luis Miguel</h3>
+      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+      <button onclick="abrirModal('modal_cassette_cd')">Ver más</button>
+    </div>
+
+    <!-- Notebook Dell Inspiron 1525 -->
+    <div class="item notebook">
+      <h3>Notebook Dell Inspiron 1525</h3>
+      <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+      <button onclick="abrirModal('modal_dell')">Ver más</button>
+    </div>
+
+    <!-- CPU AMD Phenom X2 -->
+    <div class="item cpu">
+      <h3>CPU AMD Phenom X2</h3>
+      <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
+      <button onclick="abrirModal('modal_cpu_phenom')">Ver más</button>
+    </div>
+
+    <!-- CPU Intel Core 2 Quad -->
+    <div class="item cpu">
+      <h3>CPU Intel Core 2 Quad</h3>
+      <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
+      <button onclick="abrirModal('modal_cpu_core2quad')">Ver más</button>
+    </div>
+
+    <!-- Asus Strix GL702V -->
+    <div class="item notebook">
+      <h3>Asus Strix GL702V</h3>
+      <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
+      <button onclick="abrirModal('modal_asus_strix')">Ver más</button>
+    </div>
+
+    <!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
+    <div class="item retro">
+      <h3>Placa madre MSI MS7030 Neo + Athlon 64</h3>
+      <img src="images/msi_ms7030_athlon64.jpeg" alt="MSI MS7030 + Athlon 64">
+      <button onclick="abrirModal('modal_msi_athlon')">Ver más</button>
+    </div>
+
+    <!-- Lote 6 placas de sonido -->
+    <div class="item lote">
+      <h3>Lote 6 placas de sonido</h3>
+      <img src="images/lote_6_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
+      <button onclick="abrirModal('modal_lote_sonido')">Ver más</button>
+    </div>
+
+    <!-- Lote 6 netbooks de gobierno -->
+    <div class="item notebook lote">
+      <h3>Lote 6 netbooks de gobierno</h3>
+      <img src="images/lote_6_netbooks.jpeg" alt="Lote 6 netbooks de gobierno">
+      <button onclick="abrirModal('modal_lote_netbooks')">Ver más</button>
+    </div>
+
+    <!-- Lote notebooks varias marcas -->
+    <div class="item notebook lote">
+      <h3>Lote notebooks varias marcas</h3>
+      <img src="images/lote_notebooks_varias_marcas.jpeg" alt="Lote notebooks varias marcas">
+      <button onclick="abrirModal('modal_lote_notebooks_varias')">Ver más</button>
+    </div>
+
+    <!-- Lote PS2 Slim -->
+    <div class="item consola lote">
+      <h3>Lote PS2 Slim</h3>
+      <img src="images/lote_ps2_slim.jpeg" alt="Lote PS2 Slim">
+      <button onclick="abrirModal('modal_lote_ps2')">Ver más</button>
+    </div>
+
+    <!-- Lote placas madre retro -->
+    <div class="item retro lote">
+      <h3>Lote placas madre retro</h3>
+      <img src="images/lote_motherboards_retro.jpeg" alt="Lote placas madre retro">
+      <button onclick="abrirModal('modal_lote_mother_retro')">Ver más</button>
+    </div>
+
+    <!-- Lote x4 Motherboards -->
+    <div class="item mother scrap lote">
+      <h3>Lote x4 Motherboards</h3>
+      <img src="images/lote_4_motherboards.jpeg" alt="Lote x4 Motherboards">
+      <button onclick="abrirModal('modal_lote_4_mother')">Ver más</button>
+    </div>
+
+    <!-- Motherboard SiS 530 + AMD K6 -->
+    <div class="item retro">
+      <h3>Motherboard SiS 530 + AMD K6</h3>
+      <img src="images/mother_sis530_amd_k6.jpeg" alt="Motherboard SiS 530 + AMD K6">
+      <button onclick="abrirModal('modal_sis_amd_k6')">Ver más</button>
+    </div>
+
+    <!-- Motherboard PCPartner 35-7008-11 -->
+    <div class="item retro">
+      <h3>Motherboard PCPartner 35-7008-11</h3>
+      <img src="images/mother_pcpartner_35-7008-11.jpeg" alt="Motherboard PCPartner 35-7008-11">
+      <button onclick="abrirModal('modal_pcpartner')">Ver más</button>
+    </div>
+
+    <!-- Sound Blaster 16 + Parlantes Creative -->
+    <div class="item retro">
+      <h3>Sound Blaster 16 + Parlantes Creative</h3>
+      <img src="images/soundblaster16_parlantes_creative.jpeg" alt="Sound Blaster 16 + Parlantes Creative">
+      <button onclick="abrirModal('modal_soundblaster')">Ver más</button>
+    </div>
+
+    <!-- IBM ThinkPad T30 + R40 -->
+    <div class="item retro notebook">
+      <h3>IBM ThinkPad T30 + R40</h3>
+      <img src="images/ibm_thinkpad_t30_r40.jpeg" alt="IBM ThinkPad T30 + R40">
+      <button onclick="abrirModal('modal_ibm_thinkpad')">Ver más</button>
+    </div>
+
+    <!-- Lote de placas de video -->
+    <div class="item grafica lote">
+      <h3>Lote de placas de video</h3>
+      <img src="images/lote_2_placas_video.jpeg" alt="Lote de placas de video">
+      <button onclick="abrirModal('modal_lote_grafica')">Ver más</button>
+    </div>
+
+    <!-- Lote monitores Philips y BGH -->
+    <div class="item periferico lote">
+      <h3>Lote monitores Philips y BGH</h3>
+      <img src="images/lote_monitores_philips_bgh.jpeg" alt="Lote monitores Philips y BGH">
+      <button onclick="abrirModal('modal_lote_monitores')">Ver más</button>
+    </div>
+
+    <!-- Lote gabinetes blancos retro -->
+    <div class="item lote">
+      <h3>Lote gabinetes blancos retro</h3>
+      <img src="images/lote_gabinetes_blancos_retro.jpeg" alt="Lote gabinetes blancos retro">
+      <button onclick="abrirModal('modal_lote_gabinetes')">Ver más</button>
+    </div>
+
+    <!-- Lote auriculares + parlante -->
+    <div class="item lote periferico">
+      <h3>Lote auriculares + parlante</h3>
+      <img src="images/lote_auriculares_parlante.jpeg" alt="Lote auriculares + parlante">
+      <button onclick="abrirModal('modal_lote_auriculares')">Ver más</button>
+    </div>
+
+    <!-- Lote audio para PC -->
+    <div class="item lote periferico">
+      <h3>Lote audio para PC</h3>
+      <img src="images/lote_audio_pc.jpeg" alt="Lote audio para PC">
+      <button onclick="abrirModal('modal_lote_audio')">Ver más</button>
+    </div>
+
+    <!-- Procesadores Intel Socket 1155 -->
+    <div class="item procesadores">
+      <h3>Procesadores Intel Socket 1155</h3>
+      <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel Socket 1155">
+      <button onclick="abrirModal('modal_procesadores_1155')">Ver más</button>
+    </div>
+
+    <!-- Discos rígidos HDD -->
+    <div class="item disco">
+      <h3>Discos rígidos HDD</h3>
+      <img src="images/discos_hdd_buen_estado.jpeg" alt="Discos rígidos HDD">
+      <button onclick="abrirModal('modal_discos_hdd')">Ver más</button>
+    </div>
+
   </div>
+</div>
 
-  <!-- Aquí irían los 40+ modales restantes siguiendo exactamente este patrón -->
-  <!-- Cada modal incluye título, imagen, descripción completa y botón WhatsApp -->
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
+    <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-right">
+    <p>“La paciencia y la constancia traen grandes resultados.”</p>
+  </div>
+</footer>
 
-  <script>
-    function filtrar(tag, elem) {
-      const items = document.querySelectorAll('.item');
-      const botones = document.querySelectorAll('.categorias li');
-      botones.forEach(b => b.classList.remove('active'));
-      elem.classList.add('active');
-      if(tag === 'all') {
-        items.forEach(item => item.style.display = 'block');
-        return;
-      }
-      items.forEach(item => {
-        item.style.display = item.classList.contains(tag) ? 'block' : 'none';
-      });
-    }
+<!-- SCRIPT -->
+<script>
+function filtrar(tag, elem) {
+  const items = document.querySelectorAll('.item');
+  const botones = document.querySelectorAll('.categorias li');
+  botones.forEach(b => b.classList.remove('active'));
+  elem.classList.add('active');
 
-    function abrirModal(id) {
-      document.getElementById(id).style.display = 'block';
-    }
+  if(tag === 'all') {
+    items.forEach(item => item.style.display = 'block');
+    return;
+  }
 
-    function cerrarModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
+  items.forEach(item => {
+    item.style.display = item.classList.contains(tag) ? 'block' : 'none';
+  });
+}
 
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(modal => {
-        if(event.target == modal) modal.style.display = 'none';
-      });
-    }
-  </script>
+function abrirModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function cerrarModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+window.onclick = function(event) {
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if(event.target == modal) modal.style.display = 'none';
+  });
+}
+</script>
+
+<link rel="stylesheet" href="style.css?v=12">
 
 </body>
 </html>
+
