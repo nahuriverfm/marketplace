@@ -1,186 +1,187 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=11">
-</head>
-<body>
+<!-- MODALES COMPLETOS -->
 
-  <!-- HEADER -->
-  <header>
-    <div class="banner">
-      <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
-    </div>
-  </header>
-
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="layout">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-      <!-- LOGO -->
-      <div class="sidebar-logo">
-        <img src="images/logo.jpeg" alt="Logo" class="logo">
-      </div>
-
-      <!-- CATEGORÍAS -->
-      <ul class="categorias">
-        <li onclick="filtrar('all', this)" class="active">Todos</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('consolas', this)">Consolas</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('graficas', this)">Gráficas</li>
-        <li onclick="filtrar('peri', this)">Periféricos</li>
-        <li onclick="filtrar('otros', this)">Otros</li>
-      </ul>
-
-    </aside>
-
-    <!-- GRID DE PRODUCTOS -->
-    <div class="grid-container">
-
-      <!-- ARTÍCULO 1: Notebook Samsung -->
-      <div class="item retro para-repuesto">
-        <h3>Notebook Samsung NP-NC110P</h3>
-        <!-- Imagen: subir a images/samsung_np_nc110p.jpeg -->
-        <img src="images/samsung_np_nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-        <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-samsung_np_nc110p')">Ver más</button>
-      </div>
-
-      <!-- ARTÍCULO 2: Cassette + CD Luis Miguel -->
-      <div class="item retro para-repuesto">
-        <h3>Cassette + CD Luis Miguel – Lote musical</h3>
-        <!-- Imagen: subir a images/cassette_cd_luis_miguel.jpeg -->
-        <img src="images/cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel – Lote musical">
-        <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-cassette_cd_luis_miguel')">Ver más</button>
-      </div>
-
-      <!-- ARTÍCULO 3: Notebook Dell Inspiron 1525 -->
-      <div class="item retro para-repuesto">
-        <h3>Notebook Dell Inspiron 1525 – Funciona y da imagen</h3>
-        <!-- Imagen: subir a images/dell_inspiron_1525.jpeg -->
-        <img src="images/dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-        <p class="precio">$20.000</p>
-        <button onclick="abrirModal('modal-dell_inspiron_1525')">Ver más</button>
-      </div>
-
-    </div>
+<!-- Notebook Samsung NP-NC110P -->
+<div id="modal-samsung" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
+    <h2>Notebook Samsung NP-NC110P</h2>
+    <p>Prende, da imagen y entra a BIOS sin problema.<br>
+       No tiene disco duro ni cargador.<br>
+       Tiene memoria RAM y batería colocada.<br>
+       Ideal para repuestos o para restaurar.</p>
+    <ul>
+      <li>Modelo: NP-NC110P</li>
+      <li>Procesador: Intel Atom N2600 (1.6 GHz)</li>
+      <li>RAM: 1 GB</li>
+      <li>Sin disco / sin cargador</li>
+      <li>Da imagen</li>
+    </ul>
+    <p>Precio: $15.000</p>
   </div>
+</div>
 
-  <!-- MODALES -->
-
-  <!-- Modal Notebook Samsung -->
-  <div id="modal-samsung_np_nc110p" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal-samsung_np_nc110p')">&times;</span>
-      <h3>Notebook Samsung NP-NC110P</h3>
-      <img src="images/samsung_np_nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-      <p>
-        Prende, da imagen y entra a BIOS sin problema.<br>
-        No tiene disco duro ni cargador.<br>
-        Tiene memoria RAM y batería colocada.<br>
-        Ideal para repuestos o restaurar.<br><br>
-        <strong>Modelo:</strong> NP-NC110P<br>
-        <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
-        <strong>RAM:</strong> 1 GB<br>
-        <strong>Estado:</strong> Para repuesto / sin disco ni cargador<br>
-        <strong>Da imagen</strong>
-      </p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Notebook%20Samsung%20NP-NC110P" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
+<!-- Cassette + CD Luis Miguel -->
+<div id="modal-lote-musical" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-lote-musical')">&times;</span>
+    <h2>Cassette + CD Luis Miguel – Lote musical</h2>
+    <p>Vendo 2 items juntos:</p>
+    <ul>
+      <li>Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)</li>
+      <li>CD ”Romances” – Luis Miguel (original, usado)</li>
+    </ul>
+    <p>Ambos en buen estado general (ver fotos)</p>
+    <p>Precio por el lote: $15.000</p>
   </div>
+</div>
 
-  <!-- Modal Cassette + CD Luis Miguel -->
-  <div id="modal-cassette_cd_luis_miguel" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal-cassette_cd_luis_miguel')">&times;</span>
-      <h3>Cassette + CD Luis Miguel – Lote musical</h3>
-      <img src="images/cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel – Lote musical">
-      <p>
-        2 items juntos:<br>
-        • Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>
-        • CD ”Romances” – Luis Miguel (original, usado)<br>
-        Ambos en buen estado general.<br>
-        <strong>Precio por el lote:</strong> $15.000
-      </p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Cassette%20+%20CD%20Luis%20Miguel" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
+<!-- Notebook Dell Inspiron 1525 -->
+<div id="modal-dell" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-dell')">&times;</span>
+    <h2>Notebook Dell Inspiron 1525</h2>
+    <ul>
+      <li>Enciende correctamente y da imagen sin problema.</li>
+      <li>Incluye memoria RAM instalada.</li>
+      <li>Ideal para repuestos, restaurar o usar con disco propio.</li>
+      <li>No tiene disco duro.</li>
+      <li>No incluye batería ni cargador.</li>
+      <li>Detalle estético: carcasa con rotura cerca de la bisagra (funcionamiento OK)</li>
+    </ul>
+    <p>Precio: $20.000</p>
   </div>
+</div>
 
-  <!-- Modal Notebook Dell Inspiron 1525 -->
-  <div id="modal-dell_inspiron_1525" class="modal">
-    <div class="modal-content">
-      <span class="cerrar" onclick="cerrarModal('modal-dell_inspiron_1525')">&times;</span>
-      <h3>Notebook Dell Inspiron 1525 – Funciona y da imagen</h3>
-      <img src="images/dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-      <p>
-        Enciende correctamente y da imagen sin problema.<br>
-        Incluye memoria RAM instalada.<br>
-        Ideal para repuestos, restaurar o usar con disco propio.<br>
-        ❌ No tiene disco duro.<br>
-        ❌ No incluye batería ni cargador.<br>
-        ⚠️ Detalle estético: la carcasa tiene una rotura cerca de la bisagra, pero no afecta el funcionamiento.
-      </p>
-      <a href="https://wa.me/5491123456789?text=Hola,%20quiero%20consultar%20por%20Notebook%20Dell%20Inspiron%201525" target="_blank">
-        Contactar por WhatsApp
-      </a>
-    </div>
+<!-- Lote de 7 cassettes originales -->
+<div id="modal-lote-cassettes" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-lote-cassettes')">&times;</span>
+    <h2>Lote de 7 cassettes originales – música popular</h2>
+    <p>Vendo lote de 7 cassettes originales, usados, ideales para coleccionistas o amantes del formato cassette.</p>
+    <ul>
+      <li>Mercedes Sosa (2)</li>
+      <li>María Marta Serra Lima (2)</li>
+      <li>Horacio Guaraní (1)</li>
+      <li>Carlos Gardel (1)</li>
+      <li>Julio Iglesias (1)</li>
+    </ul>
+    <p>Originales, estado usado normal (sin probar recientemente)</p>
+    <p>Precio: $20.000</p>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
-      <a href="https://wa.me/5491123456789" target="_blank">WhatsApp</a>
-    </div>
-    <div class="footer-right">
-      <p>“La paciencia y la constancia traen grandes resultados.”</p>
-    </div>
-  </footer>
+<!-- CPU AMD Phenom X2 -->
+<div id="modal-cpu-phenom" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-cpu-phenom')">&times;</span>
+    <h2>CPU lista para usar – AMD Phenom X2</h2>
+    <p>CPU funcionando correctamente, lista para enchufar y usar.</p>
+    <p>Ideal para:</p>
+    <ul>
+      <li>Estudiar</li>
+      <li>Ver YouTube y videos</li>
+      <li>Uso familiar</li>
+      <li>Juegos recreativos</li>
+      <li>Chicos</li>
+    </ul>
+    <p>Funciones adicionales:</p>
+    <ul>
+      <li>Juegos instalados: PES 2024–2025, Hit & Run, Call of Duty, Plants vs Zombies, Counter-Strike 1.6</li>
+      <li>Programas: LibreOffice, VLC Media Player, Pluto TV</li>
+    </ul>
+    <p>Especificaciones:</p>
+    <ul>
+      <li>Procesador: AMD Phenom X2 (Dual Core)</li>
+      <li>RAM: 4 GB DDR3</li>
+      <li>Disco rígido: 250 GB</li>
+      <li>Motherboard: Gigabyte</li>
+      <li>Sistema operativo: Windows 10 64 bits</li>
+    </ul>
+    <p>No incluye: Monitor, Teclado, Mouse, Cables</p>
+    <p>Precio: $50.000</p>
+  </div>
+</div>
 
-  <!-- SCRIPT -->
-  <script>
-    function filtrar(tag, elem) {
-      const items = document.querySelectorAll('.item');
-      const botones = document.querySelectorAll('.categorias li');
-      botones.forEach(b => b.classList.remove('active'));
-      elem.classList.add('active');
+<!-- CPU Intel Core 2 Quad -->
+<div id="modal-cpu-core2quad" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-cpu-core2quad')">&times;</span>
+    <h2>CPU lista para usar – Intel Core 2 Quad</h2>
+    <p>Se vende computadora funcionando y probada, lista para usar.</p>
+    <ul>
+      <li>Procesador: Intel Core 2 Quad Q6600</li>
+      <li>RAM: 3 GB</li>
+      <li>Disco rígido: 80 GB</li>
+      <li>Sistema: Windows 11 optimizado</li>
+      <li>LibreOffice instalado</li>
+    </ul>
+    <p>Incluye: Teclado de regalo</p>
+    <p>No incluye: Monitor, Mouse, Cables</p>
+    <p>Precio: $20.000</p>
+  </div>
+</div>
 
-      if(tag === 'all') {
-        items.forEach(item => item.style.display = 'block');
-        return;
-      }
+<!-- Asus Strix GL702V -->
+<div id="modal-asus-strix" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-asus-strix')">&times;</span>
+    <h2>Asus Strix GL702V – Solo carcasa</h2>
+    <ul>
+      <li>Pantalla rota</li>
+      <li>No incluye placa ni componentes internos</li>
+      <li>Teclado puede ser reutilizable (a confirmar)</li>
+      <li>Carcasa en buen estado, ideal para repuestos o reconstrucción</li>
+    </ul>
+    <p>Precio: $15.000</p>
+  </div>
+</div>
 
-      items.forEach(item => {
-        item.style.display = item.classList.contains(tag) ? 'block' : 'none';
-      });
-    }
+<!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
+<div id="modal-msi-athlon64" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-msi-athlon64')">&times;</span>
+    <h2>Placa madre MSI MS7030 Neo + Athlon 64 800 – Retro</h2>
+    <p>Se vende combo retro:</p>
+    <ul>
+      <li>Placa madre MSI MS7030 Neo (socket 754)</li>
+      <li>Procesador Athlon 64 800</li>
+    </ul>
+    <p>La placa funciona y da imagen con placa de video.</p>
+    <p>⚠️ Algunos capacitores están hinchados, se vende para reparación o colección. Ideal para entusiastas de PC retro.</p>
+    <p>Precio: $10.000 por el combo</p>
+  </div>
+</div>
 
-    function abrirModal(id) {
-      document.getElementById(id).style.display = 'block';
-    }
+<!-- Lote 6 placas de sonido -->
+<div id="modal-lote-sonido" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-lote-sonido')">&times;</span>
+    <h2>Lote de 6 placas de sonido – Genius y genéricas</h2>
+    <p>Se vende lote de 6 placas de sonido:</p>
+    <ul>
+      <li>2 Genius</li>
+      <li>4 genéricas</li>
+    </ul>
+    <p>Todas están para revisar y aprobar, se venden tal cual. Ideal para reparación, repuestos o proyectos.</p>
+    <p>Precio del lote: $10.000</p>
+  </div>
+</div>
 
-    function cerrarModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
+<!-- Lote 6 netbooks de gobierno -->
+<div id="modal-lote-netbooks" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-lote-netbooks')">&times;</span>
+    <h2>Lote de 6 netbooks de gobierno – Para repuesto / reparar</h2>
+    <p>Todas las netbooks se venden PARA REPUESTO O REPARAR.</p>
+    <ul>
+      <li>Banghó G3 (2 unidades) – No prende</li>
+      <li>EXO G3 (2 unidades) – 1 prende y da imagen, pantalla sana</li>
+      <li>EXO G1 – Prende y da imagen</li>
+      <li>Canaima G2 – Prende y da imagen</li>
+    </ul>
+    <p>Se vende todo el lote junto, ideal para técnicos, reparación, desarme o repuestos. Estado estético variable.</p>
+    <p>Precio: $40.000</p>
+  </div>
+</div>
 
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(modal => {
-        if(event.target == modal) modal.style.display = 'none';
-      });
-    }
-  </script>
-
-</body>
-</html>
+<!-- ... Continuar con el mismo patrón para los demás productos ... -->
