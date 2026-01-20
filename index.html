@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -15,128 +15,85 @@
     </div>
   </header>
 
-  <!-- LAYOUT -->
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="layout">
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
-
-      <!-- LOGO -->
       <div class="sidebar-logo">
         <img src="images/logo.jpeg" alt="Logo" class="logo">
       </div>
-
-      <!-- CATEGORÍAS -->
       <ul class="categorias">
         <li onclick="filtrar('all', this)" class="active">Todos</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('notebook', this)">Notebook/Netbook</li>
+        <li onclick="filtrar('notebook/netbook', this)">Notebook/Netbook</li>
         <li onclick="filtrar('lote', this)">Lote</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('consola', this)">Consola</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('periferico', this)">Periféricos</li>
-        <li onclick="filtrar('disco', this)">Discos</li>
         <li onclick="filtrar('oferta', this)">Oferta</li>
+        <li onclick="filtrar('retro', this)">Retro</li>
+        <li onclick="filtrar('cpu', this)">CPU</li>
+        <li onclick="filtrar('mother', this)">Mother</li>
+        <li onclick="filtrar('scrap', this)">Scrap</li>
+        <li onclick="filtrar('consola', this)">Consola</li>
+        <li onclick="filtrar('grafica', this)">Gráfica</li>
+        <li onclick="filtrar('periferico', this)">Periférico</li>
+        <li onclick="filtrar('procesadores', this)">Procesadores</li>
+        <li onclick="filtrar('disco', this)">Disco</li>
       </ul>
-
     </aside>
 
     <!-- GRID DE PRODUCTOS -->
     <div class="grid-container">
-
-      <!-- Notebook Samsung NP-NC110P -->
-      <div class="item notebook" >
+      <!-- EJEMPLO DE ITEM CON MODAL -->
+      <div class="item notebook/netbook" >
         <h3>Notebook Samsung NP-NC110P</h3>
-        <img src="images/samsung.jpeg" alt="Notebook Samsung NP-NC110P">
-        <p>Prende, da imagen y entra a BIOS sin problema.<br>Sin disco ni cargador, RAM y batería incluidas. Ideal para repuestos o restaurar.</p>
+        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
         <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-samsung')">Ver más</button>
+        <button onclick="abrirModal('modal_samsung')">Ver más</button>
       </div>
 
-      <!-- Cassette + CD Luis Miguel -->
-      <div class="item lote">
-        <h3>Cassette + CD Luis Miguel – Lote musical</h3>
-        <img src="images/lote_musical.jpeg" alt="Cassette + CD Luis Miguel">
-        <p>Vendo 2 items juntos: cassette "Amarte Es un Placer" y CD "Romances".</p>
+      <div class="item lote retro">
+        <h3>Cassette + CD Luis Miguel</h3>
+        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
         <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-lote-musical')">Ver más</button>
+        <button onclick="abrirModal('modal_luis_miguel')">Ver más</button>
       </div>
 
-      <!-- Notebook Dell Inspiron 1525 -->
-      <div class="item notebook">
+      <div class="item notebook/netbook" >
         <h3>Notebook Dell Inspiron 1525</h3>
-        <img src="images/dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-        <p>Enciende y da imagen, incluye RAM. Sin disco, sin batería ni cargador. Carcasa con rotura cerca de bisagra.</p>
+        <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
         <p class="precio">$20.000</p>
-        <button onclick="abrirModal('modal-dell')">Ver más</button>
+        <button onclick="abrirModal('modal_dell')">Ver más</button>
       </div>
 
-      <!-- Lote 7 cassettes originales -->
-      <div class="item lote retro">
-        <h3>Lote 7 cassettes originales – música popular</h3>
-        <img src="images/lote_cassettes.jpeg" alt="Lote de 7 cassettes">
-        <p>Ideal para coleccionistas o amantes del formato cassette.</p>
-        <p class="precio">$20.000</p>
-        <button onclick="abrirModal('modal-lote-cassettes')">Ver más</button>
-      </div>
-
-      <!-- CPU AMD Phenom X2 -->
-      <div class="item cpu">
-        <h3>CPU AMD Phenom X2 – Estudio y juegos</h3>
-        <img src="images/cpu_amd_phenom.jpeg" alt="CPU AMD Phenom X2">
-        <p>Lista para usar, juegos y programas incluidos, ideal para tareas diarias y multimedia.</p>
+      <div class="item cpu" >
+        <h3>CPU lista – AMD Phenom X2</h3>
+        <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
         <p class="precio">$50.000</p>
-        <button onclick="abrirModal('modal-cpu-phenom')">Ver más</button>
+        <button onclick="abrirModal('modal_cpu_phenom')">Ver más</button>
       </div>
 
-      <!-- CPU Intel Core 2 Quad -->
-      <div class="item cpu">
-        <h3>CPU Intel Core 2 Quad – Primera PC / juegos clásicos</h3>
-        <img src="images/cpu_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
-        <p>Funciona correctamente, incluye teclado, ideal para tareas básicas y juegos retro.</p>
+      <div class="item cpu" >
+        <h3>CPU lista – Intel Core 2 Quad</h3>
+        <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
         <p class="precio">$20.000</p>
-        <button onclick="abrirModal('modal-cpu-core2quad')">Ver más</button>
+        <button onclick="abrirModal('modal_cpu_core2')">Ver más</button>
       </div>
 
-      <!-- Asus Strix GL702V -->
-      <div class="item notebook">
+      <div class="item notebook/netbook scrap">
         <h3>Asus Strix GL702V – Solo carcasa</h3>
-        <img src="images/asus_strix.jpeg" alt="Asus Strix GL702V">
-        <p>Pantalla rota, solo carcasa. Ideal para repuestos o reconstrucción.</p>
+        <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
         <p class="precio">$15.000</p>
-        <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
+        <button onclick="abrirModal('modal_asus_strix')">Ver más</button>
       </div>
 
-      <!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
-      <div class="item retro">
-        <h3>Placa madre MSI MS7030 Neo + Athlon 64 800</h3>
-        <img src="images/msi_ms7030.jpeg" alt="Placa madre MSI MS7030 Neo">
-        <p>Combo retro, placa funcionando, capacitores hinchados. Ideal reparación/colección.</p>
+      <div class="item retro" >
+        <h3>Placa madre MSI MS7030 Neo + Athlon 64</h3>
+        <img src="images/msi_ms7030_athlon64.jpeg" alt="Placa madre MSI MS7030 Neo + Athlon 64">
         <p class="precio">$10.000</p>
-        <button onclick="abrirModal('modal-msi-athlon64')">Ver más</button>
+        <button onclick="abrirModal('modal_msi_athlon')">Ver más</button>
       </div>
 
-      <!-- Lote 6 placas de sonido -->
-      <div class="item lote retro">
-        <h3>Lote 6 placas de sonido – Genius y genéricas</h3>
-        <img src="images/lote_sonido.jpeg" alt="Lote placas de sonido">
-        <p>Todas para revisar. Ideal reparación, repuestos o proyectos.</p>
-        <p class="precio">$10.000</p>
-        <button onclick="abrirModal('modal-lote-sonido')">Ver más</button>
-      </div>
+      <!-- Agrega aquí el resto de los items siguiendo la misma estructura -->
 
-      <!-- Lote 6 netbooks de gobierno -->
-      <div class="item notebook lote">
-        <h3>Lote 6 netbooks de gobierno – Para repuesto / reparar</h3>
-        <img src="images/lote_netbooks.jpeg" alt="Lote netbooks gobierno">
-        <p>Algunas prenden y dan imagen, otras no. Se vende todo junto.</p>
-        <p class="precio">$40.000</p>
-        <button onclick="abrirModal('modal-lote-netbooks')">Ver más</button>
-      </div>
-
-      <!-- Agregar los demás productos siguiendo este mismo patrón -->
-      
     </div>
   </div>
 
@@ -150,6 +107,100 @@
       <p>“La paciencia y la constancia traen grandes resultados.”</p>
     </div>
   </footer>
+
+  <!-- MODALES -->
+  <!-- Notebook Samsung NP-NC110P -->
+  <div id="modal_samsung" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal_samsung')">&times;</span>
+      <h3>Notebook Samsung NP-NC110P</h3>
+      <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
+      <p>Prende, da imagen y entra a BIOS sin problema.<br>
+      No tiene disco duro ni cargador.<br>
+      Tiene memoria RAM y batería colocada.<br>
+      Ideal para repuestos o para restaurar.</p>
+      <p>Modelo: NP-NC110P<br>
+      Procesador: Intel Atom N2600 (1.6 GHz)<br>
+      RAM: 1 GB<br>
+      Sin disco / sin cargador<br>
+      Da imagen</p>
+      <p class="precio">$15.000</p>
+      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20la%20Notebook%20Samsung%20NP-NC110P" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Cassette + CD Luis Miguel -->
+  <div id="modal_luis_miguel" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal_luis_miguel')">&times;</span>
+      <h3>Cassette + CD Luis Miguel</h3>
+      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+      <p>Vendo 2 items juntos:<br>
+      • Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>
+      • CD ”Romances” – Luis Miguel (original, usado)<br>
+      Ambos en buen estado general (ver fotos)</p>
+      <p class="precio">$15.000</p>
+      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20el%20lote%20Cassette%20y%20CD%20Luis%20Miguel" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Notebook Dell Inspiron 1525 -->
+  <div id="modal_dell" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal_dell')">&times;</span>
+      <h3>Notebook Dell Inspiron 1525</h3>
+      <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+      <p>Enciende correctamente y da imagen sin problema.<br>
+      Incluye memoria RAM instalada.<br>
+      Ideal para repuestos, restaurar o usar con disco propio.<br>
+      Detalle estético: la carcasa tiene una rotura cerca de la bisagra, pero no afecta el funcionamiento.<br>
+      No tiene disco duro ni incluye batería o cargador.</p>
+      <p class="precio">$20.000</p>
+      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20la%20Notebook%20Dell%20Inspiron%201525" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- CPU AMD Phenom X2 -->
+  <div id="modal_cpu_phenom" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal_cpu_phenom')">&times;</span>
+      <h3>CPU lista – AMD Phenom X2</h3>
+      <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
+      <p>CPU funcionando correctamente, lista para enchufar y usar.<br>
+      Ideal para estudiar, ver YouTube, uso familiar y juegos recreativos.<br>
+      <strong>Especificaciones:</strong><br>
+      Procesador: AMD Phenom X2 (Dual Core)<br>
+      RAM: 4 GB DDR3<br>
+      Disco rígido: 250 GB<br>
+      Sistema operativo: Windows 10 64 bits<br>
+      Juegos instalados: PES 2024-2025, Hit & Run, Call of Duty, Plants vs Zombies, Counter-Strike 1.6<br>
+      Programas incluidos: LibreOffice, VLC, Pluto TV</p>
+      <p class="precio">$50.000</p>
+      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20la%20CPU%20AMD%20Phenom%20X2" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- CPU Intel Core 2 Quad -->
+  <div id="modal_cpu_core2" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal_cpu_core2')">&times;</span>
+      <h3>CPU lista – Intel Core 2 Quad</h3>
+      <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
+      <p>Se vende computadora funcionando y probada, lista para usar.<br>
+      Ideal para estudio, uso familiar y juegos clásicos.<br>
+      Especificaciones:<br>
+      Procesador: Intel Core 2 Quad Q6600<br>
+      RAM: 3 GB<br>
+      Disco rígido: 80 GB<br>
+      Sistema: Windows 11 optimizado<br>
+      Juegos incluidos: Counter-Strike 1.6, Age of Empires II, Plants vs Zombies, Emulador Sega<br>
+      Incluye teclado de regalo. No incluye monitor, mouse ni cables.</p>
+      <p class="precio">$20.000</p>
+      <a href="https://wa.me/5491133541569?text=Hola%20quiero%20comprar%20la%20CPU%20Intel%20Core%202%20Quad" target="_blank">Contactar por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Agregar todos los modales restantes siguiendo la misma estructura -->
 
   <!-- SCRIPT -->
   <script>
