@@ -4,151 +4,160 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="banner">
     <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
   </div>
 </header>
 
-<main class="layout">
+<div class="layout">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <div class="sidebar-logo">
       <img src="images/logo.jpeg" alt="Logo" class="logo">
     </div>
 
     <ul class="categorias">
-      <li onclick="filtrar('all', this)" class="active">Todos</li>
-      <li onclick="filtrar('retro', this)">Retro</li>
+      <li class="active" onclick="filtrar('all', this)">Todos</li>
       <li onclick="filtrar('netbook', this)">Notebook / Netbook</li>
-      <li onclick="filtrar('lote', this)">Lote</li>
-      <li onclick="filtrar('cpu', this)">CPU</li>
-      <li onclick="filtrar('mother', this)">Mother</li>
-      <li onclick="filtrar('grafica', this)">Gráficas</li>
-      <li onclick="filtrar('periferico', this)">Periféricos</li>
-      <li onclick="filtrar('disco', this)">Disco Duro</li>
-      <li onclick="filtrar('procesadores', this)">Procesadores</li>
+      <li onclick="filtrar('lote', this)">Lotes</li>
       <li onclick="filtrar('otros', this)">Otros</li>
-      <li onclick="filtrar('oferta', this)">Oferta</li>
     </ul>
-
   </aside>
 
   <!-- GRID -->
-  <section class="grid-container">
+  <div class="grid-container">
 
-    <!-- PRODUCTO 1 -->
-    <div class="item netbook"
-      data-titulo="Notebook Samsung NP-NC110P"
-      data-precio="$15.000"
-      data-img="images/notebook_samsung_np-nc110p.jpeg"
-      data-desc="Prende, entra a BIOS, sin disco ni cargador. Tiene RAM y batería. Ideal para repuestos o restaurar."
-    >
+    <!-- SAMSUNG (SE DEJA COMO ESTABA) -->
+    <div class="item netbook">
       <h3>Notebook Samsung NP-NC110P</h3>
-      <img src="images/notebook_samsung_np-nc110p.jpeg" alt="">
+      <img src="images/notebook_samsung_np-nc110p.jpeg">
       <p class="precio">$15.000</p>
-      <a class="btn-whatsapp"
-        href="https://wa.me/5491133541569?text=Hola,%20me%20interesa%20la%20Notebook%20Samsung%20NP-NC110P"
-        target="_blank">
-        Contactar por WhatsApp
-      </a>
-      <button onclick="abrirModal(this)">Ver más</button>
+      <button onclick="abrirModal('modal-samsung')">Ver más</button>
     </div>
 
-    <!-- PRODUCTO 2 -->
-    <div class="item cpu"
-      data-titulo="CPU AMD Phenom X2"
-      data-precio="$50.000"
-      data-img="images/cpu_amd_phenom_x2.jpeg"
-      data-desc="AMD Phenom II X2 555. Funciona perfecto. Ideal para PC económica."
-    >
-      <h3>CPU AMD Phenom X2</h3>
-      <img src="images/cpu_amd_phenom_x2.jpeg" alt="">
-      <p class="precio">$50.000</p>
-      <a class="btn-whatsapp"
-        href="https://wa.me/5491133541569?text=Hola,%20me%20interesa%20la%20CPU%20AMD%20Phenom%20X2"
-        target="_blank">
-        Contactar por WhatsApp
-      </a>
-      <button onclick="abrirModal(this)">Ver más</button>
+    <!-- LOTE LUIS MIGUEL -->
+    <div class="item lote">
+      <h3>Lote Luis Miguel (Cassette + CD)</h3>
+      <img src="images/lote_cassette_cd_luis_miguel.jpeg">
+      <p class="precio">$15.000</p>
+      <button onclick="abrirModal('modal-luis')">Ver más</button>
     </div>
 
-    <!-- DUPLICÁ ESTE BLOQUE PARA MÁS PRODUCTOS -->
+    <!-- DELL -->
+    <div class="item netbook">
+      <h3>Notebook Dell Inspiron 1525</h3>
+      <img src="images/notebook_dell_inspiron_1525.jpeg">
+      <p class="precio">$20.000</p>
+      <button onclick="abrirModal('modal-dell')">Ver más</button>
+    </div>
 
-  </section>
+    <!-- ASUS -->
+    <div class="item otros">
+      <h3>Asus Strix ROG GL702V</h3>
+      <img src="images/asus_strix_gl702v.jpeg">
+      <p class="precio">$15.000</p>
+      <button onclick="abrirModal('modal-asus')">Ver más</button>
+    </div>
 
-</main>
-
-<!-- MODAL ÚNICO -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal()">&times;</span>
-    <h3 id="modal-titulo"></h3>
-    <img id="modal-img">
-    <p id="modal-desc"></p>
-    <p class="precio" id="modal-precio"></p>
-    <a id="modal-wpp" target="_blank" class="btn-whatsapp">
-      Contactar por WhatsApp
-    </a>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- MODALES -->
+
+<!-- SAMSUNG -->
+<div id="modal-samsung" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
+    <h3>Notebook Samsung NP-NC110P</h3>
+    <p>
+      Prende y da imagen.<br>
+      Entra a BIOS.<br>
+      Sin disco ni cargador.<br>
+      Ideal repuestos o restaurar.
+    </p>
+    <a href="https://wa.me/5491133541569" target="_blank">Contactar por WhatsApp</a>
+  </div>
+</div>
+
+<!-- LUIS MIGUEL -->
+<div id="modal-luis" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-luis')">&times;</span>
+    <h3>Lote Luis Miguel</h3>
+    <p>
+      • Cassette “Amarte Es un Placer” (original, usado)<br>
+      • CD “Romances” (original, usado)<br><br>
+      Buen estado general (ver fotos).<br>
+      Precio por el lote: <strong>$15.000</strong> (negociable).<br><br>
+      Zona Sur – Lomas / Banfield / Temperley.
+    </p>
+    <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
+  </div>
+</div>
+
+<!-- DELL -->
+<div id="modal-dell" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-dell')">&times;</span>
+    <h3>Dell Inspiron 1525</h3>
+    <p>
+      Enciende y da imagen.<br>
+      RAM instalada.<br>
+      Ideal para repuestos o restaurar.<br><br>
+      ❌ Sin disco<br>
+      ❌ Sin batería ni cargador<br>
+      ⚠️ Detalle en carcasa cerca de bisagra (no afecta funcionamiento).<br><br>
+      <strong>Precio:</strong> $20.000<br>
+      <strong>Permutas:</strong> RAM, informática, electrónica.
+    </p>
+    <a href="https://wa.me/5491133541569" target="_blank">Contactar</a>
+  </div>
+</div>
+
+<!-- ASUS -->
+<div id="modal-asus" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-asus')">&times;</span>
+    <h3>Asus Strix ROG GL702V</h3>
+    <p>
+      Solo carcasa.<br>
+      Sin placa ni componentes internos.<br>
+      Pantalla rota.<br>
+      Teclado posiblemente reutilizable.<br><br>
+      Carcasa en muy buen estado.<br>
+      Ideal para repuestos o reconstrucción.<br><br>
+      <strong>Precio:</strong> $15.000
+    </p>
+    <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
+  </div>
+</div>
+
 <footer class="footer">
-  <div class="footer-left">
-    <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
-    <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
-  </div>
-  <div class="footer-right">
-    <p>“La paciencia y la constancia traen grandes resultados.”</p>
-  </div>
+  <p>Zona Sur · Ventas particulares</p>
 </footer>
 
-<!-- SCRIPT -->
 <script>
-function filtrar(tag, elem) {
-  const items = document.querySelectorAll('.item');
-  const botones = document.querySelectorAll('.categorias li');
+function filtrar(cat, el) {
+  document.querySelectorAll('.categorias li').forEach(li => li.classList.remove('active'));
+  el.classList.add('active');
 
-  botones.forEach(b => b.classList.remove('active'));
-  elem.classList.add('active');
-
-  items.forEach(item => {
-    item.style.display =
-      (tag === 'all' || item.classList.contains(tag))
-      ? 'block'
-      : 'none';
+  document.querySelectorAll('.item').forEach(item => {
+    item.style.display = (cat === 'all' || item.classList.contains(cat)) ? 'block' : 'none';
   });
 }
 
-function abrirModal(btn) {
-  const item = btn.closest('.item');
-
-  document.getElementById('modal-titulo').innerText = item.dataset.titulo;
-  document.getElementById('modal-img').src = item.dataset.img;
-  document.getElementById('modal-desc').innerText = item.dataset.desc;
-  document.getElementById('modal-precio').innerText = item.dataset.precio;
-  document.getElementById('modal-wpp').href =
-    `https://wa.me/5491133541569?text=Hola,%20me%20interesa%20${item.dataset.titulo}`;
-
-  document.getElementById('modal').style.display = 'block';
+function abrirModal(id) {
+  document.getElementById(id).style.display = 'block';
 }
 
-function cerrarModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-
-window.onclick = function(e) {
-  const modal = document.getElementById('modal');
-  if (e.target === modal) cerrarModal();
+function cerrarModal(id) {
+  document.getElementById(id).style.display = 'none';
 }
 </script>
 
