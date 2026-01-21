@@ -1,158 +1,189 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
   <link rel="stylesheet" href="style.css?v=12">
 </head>
-<body>  <!-- HEADER -->  <header>
+<body>
+
+  <!-- HEADER -->
+  <header>
     <div class="banner">
       <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
     </div>
-  </header>  <!-- CONTENIDO PRINCIPAL -->  <div class="layout"><!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sidebar-logo">
-    <img src="images/logo.jpeg" alt="Logo" class="logo">
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+      </div>
+      <ul class="categorias">
+        <li onclick="filtrar('all', this)" class="active">Todos</li>
+        <li onclick="filtrar('retro', this)">Retro</li>
+        <li onclick="filtrar('netbook', this)">Notebook/Netbook</li>
+        <li onclick="filtrar('lote', this)">Lote</li>
+        <li onclick="filtrar('cpu', this)">CPU</li>
+        <li onclick="filtrar('mother', this)">Mother</li>
+        <li onclick="filtrar('grafica', this)">Gráficas</li>
+        <li onclick="filtrar('periferico', this)">Periféricos</li>
+        <li onclick="filtrar('disco', this)">Disco Duro</li>
+        <li onclick="filtrar('procesadores', this)">Procesadores</li>
+        <li onclick="filtrar('otros', this)">Otros</li>
+        <li onclick="filtrar('consola', this)">Consola</li>
+      </ul>
+    </aside>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="grid-container">
+
+      <!-- Notebook Samsung NP-NC110P -->
+      <div class="item netbook">
+        <h3>Notebook Samsung NP-NC110P</h3>
+        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
+        <p class="descripcion">💻 Ligera y portátil, ideal para estudiar y navegar. Batería aceptable, teclado en buen estado.</p>
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20Notebook%20Samsung%20NP-NC110P.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
+      </div>
+
+      <!-- Cassette + CD Luis Miguel -->
+      <div class="item lote">
+        <h3>Cassette + CD Luis Miguel</h3>
+        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+        <p class="descripcion">🎵 Perfecto para coleccionistas y fanáticos. Incluye cassette y CD en buen estado.</p>
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Cassette%20+%20CD%20Luis%20Miguel.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-luis-miguel')">Ver más</button>
+      </div>
+
+      <!-- Notebook Dell Inspiron 1525 -->
+      <div class="item netbook">
+        <h3>Notebook Dell Inspiron 1525</h3>
+        <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+        <p class="descripcion">💻 Ideal para uso cotidiano. Pantalla en buen estado, teclado funcional. Sin disco ni batería.</p>
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20Notebook%20Dell%20Inspiron%201525.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-notebook-dell')">Ver más</button>
+      </div>
+
+      <!-- Asus Strix GL702V -->
+      <div class="item netbook">
+        <h3>Asus Strix GL702V</h3>
+        <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
+        <p class="descripcion">🎮 Notebook gamer potente para juegos y multimedia. Buen estado general.</p>
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20la%20Asus%20Strix%20GL702V.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
+      </div>
+
+      <!-- IBM ThinkPad T30 + R40 -->
+      <div class="item netbook retro">
+        <h3>IBM ThinkPad T30 + R40</h3>
+        <img src="images/ibm_t30_r40.jpeg" alt="IBM ThinkPad T30 + R40">
+        <p class="descripcion">💾 Clásicos retro en buen estado. Ideal para coleccionistas y amantes de la tecnología vintage.</p>
+        <p class="precio">$35.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20IBM%20ThinkPad%20T30%20+%20R40.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-ibm-thinkpad')">Ver más</button>
+      </div>
+
+      <!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
+      <div class="item mother retro">
+        <h3>MSI MS7030 Neo + Athlon 64</h3>
+        <img src="images/msi_ms7030_athlon.jpeg" alt="MSI MS7030 Neo + Athlon 64">
+        <p class="descripcion">🖥️ Placa madre retro con procesador Athlon 64. Ideal para proyectos vintage o repuestos.</p>
+        <p class="precio">$10.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20la%20MSI%20MS7030%20Neo%20+%20Athlon%2064.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-msi-athlon')">Ver más</button>
+      </div>
+
+      <!-- Lote 6 placas de sonido -->
+      <div class="item lote">
+        <h3>Lote 6 Placas de sonido</h3>
+        <img src="images/lote_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
+        <p class="descripcion">🔊 Para reparaciones, proyectos o coleccionistas. Buen estado general de las placas.</p>
+        <p class="precio">$10.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%206%20Placas%20de%20sonido.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-placas-sonido')">Ver más</button>
+      </div>
+
+      <!-- Lote 6 Netbooks Gobierno -->
+      <div class="item lote netbook">
+        <h3>Lote 6 Netbooks Gobierno</h3>
+        <img src="images/lote_netbooks.jpeg" alt="Lote 6 Netbooks Gobierno">
+        <p class="descripcion">💻 Ideal para revender o armar proyectos educativos. Funcionando y con buen estado general.</p>
+        <p class="precio">$40.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%206%20Netbooks.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-netbooks')">Ver más</button>
+      </div>
+
+      <!-- Lote PS2 Slim -->
+      <div class="item lote consola">
+        <h3>Lote PS2 Slim</h3>
+        <img src="images/lote_ps2_slim.jpeg" alt="Lote PS2 Slim">
+        <p class="descripcion">🎮 Consolas en buen estado, perfectas para coleccionistas o para revender.</p>
+        <p class="precio">$45.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%20PS2%20Slim.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-ps2')">Ver más</button>
+      </div>
+
+      <!-- Motherboard PCPartner 35-7008-11 -->
+      <div class="item retro">
+        <h3>Motherboard PCPartner 35-7008-11</h3>
+        <img src="images/mother_pcpartner.jpeg" alt="Motherboard PCPartner 35-7008-11">
+        <p class="descripcion">🖥️ Placa retro para reparaciones o proyectos vintage. Estado aceptable.</p>
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20la%20Motherboard%20PCPartner.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-mother-pcpartner')">Ver más</button>
+      </div>
+
+      <!-- Sound Blaster 16 + Creative -->
+      <div class="item retro">
+        <h3>Sound Blaster 16 + Creative</h3>
+        <img src="images/soundblaster16.jpeg" alt="Sound Blaster 16 + Creative">
+        <p class="descripcion">🔊 Tarjetas de sonido clásicas, para coleccionistas o proyectos retro.</p>
+        <p class="precio">$40.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Sound%20Blaster%2016%20+%20Creative.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-soundblaster')">Ver más</button>
+      </div>
+
+      <!-- Lote placas de video -->
+      <div class="item lote">
+        <h3>Lote Placas de Video</h3>
+        <img src="images/lote_placas_video.jpeg" alt="Lote Placas de Video">
+        <p class="descripcion">🖥️ Para reparaciones, minería ligera o proyectos de PC. Buen estado general.</p>
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%20Placas%20de%20Video.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-video')">Ver más</button>
+      </div>
+
+      <!-- Lote Monitores Philips y BGH -->
+      <div class="item periferico">
+        <h3>Lote Monitores Philips y BGH</h3>
+        <img src="images/lote_monitores.jpeg" alt="Lote Monitores Philips y BGH">
+        <p class="descripcion">🖥️ Monitores funcionales para oficina o proyectos. Buen estado general.</p>
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%20Monitores.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-monitores')">Ver más</button>
+      </div>
+
+      <!-- Lote gabinetes blancos retro -->
+      <div class="item lote">
+        <h3>Lote Gabinetes Blancos Retro</h3>
+        <img src="images/lote_gabinetes.jpeg" alt="Lote Gabinetes Blancos Retro">
+        <p class="descripcion">🖥️ Gabinetes retro en buen estado, ideales para proyectos vintage.</p>
+        <p class="precio">$10.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Lote%20Gabinetes.%20¿Está%20disponible%3F" target="_blank">📱 Contactar por WhatsApp</a>
+        <button onclick="abrirModal('modal-lote-gabinetes')">Ver más</button>
+      </div>
+
+    </div>
   </div>
-  <ul class="categorias">
-    <li onclick="filtrar('all', this)" class="active">Todos</li>
-    <li onclick="filtrar('retro', this)">Retro</li>
-    <li onclick="filtrar('netbook', this)">Notebook/Netbook</li>
-    <li onclick="filtrar('lote', this)">Lote</li>
-    <li onclick="filtrar('cpu', this)">CPU</li>
-    <li onclick="filtrar('mother', this)">Mother</li>
-    <li onclick="filtrar('grafica', this)">Gráficas</li>
-    <li onclick="filtrar('periferico', this)">Periféricos</li>
-    <li onclick="filtrar('disco', this)">Disco Duro</li>
-    <li onclick="filtrar('procesadores', this)">Procesadores</li>
-    <li onclick="filtrar('otros', this)">Otros</li>
-    <li onclick="filtrar('consola', this)">Consola</li>
-  </ul>
-</aside>
 
-<!-- GRID DE PRODUCTOS -->
-<div class="grid-container">
-
-  <!-- Notebook Samsung NP-NC110P -->
-  <div class="item netbook">
-    <h3>Notebook Samsung NP-NC110P</h3>
-    <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-    <p class="precio">$15.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Notebook%20Samsung%20NP-NC110P" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
-  </div>
-
-  <!-- Cassette + CD Luis Miguel -->
-  <div class="item lote">
-    <h3>Cassette + CD Luis Miguel</h3>
-    <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-    <p class="precio">$15.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Cassette%20+%20CD%20Luis%20Miguel" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-luis-miguel')">Ver más</button>
-  </div>
-
-  <!-- Notebook Dell Inspiron 1525 -->
-  <div class="item netbook">
-    <h3>Notebook Dell Inspiron 1525</h3>
-    <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-    <p class="precio">$20.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Notebook%20Dell%20Inspiron%201525" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-notebook-dell')">Ver más</button>
-  </div>
-
-  <!-- Asus Strix GL702V -->
-  <div class="item netbook">
-    <h3>Asus Strix GL702V</h3>
-    <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
-    <p class="precio">$15.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Asus%20Strix%20GL702V" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
-  </div>
-
-  <!-- IBM ThinkPad T30 + R40 -->
-  <div class="item netbook retro">
-    <h3>IBM ThinkPad T30 + R40</h3>
-    <img src="images/ibm_t30_r40.jpeg" alt="IBM ThinkPad T30 + R40">
-    <p class="precio">$35.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20IBM%20ThinkPad%20T30%20+%20R40" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-ibm-thinkpad')">Ver más</button>
-  </div>
-
-  <!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
-  <div class="item mother retro">
-    <h3>MSI MS7030 Neo + Athlon 64</h3>
-    <img src="images/msi_ms7030_athlon.jpeg" alt="MSI MS7030 Neo + Athlon 64">
-    <p class="precio">$10.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20MSI%20MS7030%20Neo%20+%20Athlon%2064" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-msi-athlon')">Ver más</button>
-  </div>
-
-  <!-- Lote 6 placas de sonido -->
-  <div class="item lote">
-    <h3>Lote 6 Placas de sonido</h3>
-    <img src="images/lote_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
-    <p class="precio">$10.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%206%20Placas%20de%20sonido" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-placas-sonido')">Ver más</button>
-  </div>
-
-  <!-- Lote 6 Netbooks Gobierno -->
-  <div class="item lote netbook">
-    <h3>Lote 6 Netbooks Gobierno</h3>
-    <img src="images/lote_netbooks.jpeg" alt="Lote 6 Netbooks Gobierno">
-    <p class="precio">$40.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%206%20Netbooks" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-netbooks')">Ver más</button>
-  </div>
-
-  <!-- Lote PS2 Slim -->
-  <div class="item lote consola">
-    <h3>Lote PS2 Slim</h3>
-    <img src="images/lote_ps2_slim.jpeg" alt="Lote PS2 Slim">
-    <p class="precio">$45.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%20PS2%20Slim" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-ps2')">Ver más</button>
-  </div>
-
-  <!-- Motherboard PCPartner 35-7008-11 -->
-  <div class="item retro">
-    <h3>Motherboard PCPartner 35-7008-11</h3>
-    <img src="images/mother_pcpartner.jpeg" alt="Motherboard PCPartner 35-7008-11">
-    <p class="precio">$20.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Motherboard%20PCPartner" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-mother-pcpartner')">Ver más</button>
-  </div>
-
-  <!-- Sound Blaster 16 + Creative -->
-  <div class="item retro">
-    <h3>Sound Blaster 16 + Creative</h3>
-    <img src="images/soundblaster16.jpeg" alt="Sound Blaster 16 + Creative">
-    <p class="precio">$40.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Sound%20Blaster%2016%20+%20Creative" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-soundblaster')">Ver más</button>
-  </div>
-
-  <!-- Lote placas de video -->
-  <div class="item lote">
-    <h3>Lote Placas de Video</h3>
-    <img src="images/lote_placas_video.jpeg" alt="Lote Placas de Video">
-    <p class="precio">$20.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%20Placas%20de%20Video" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-video')">Ver más</button>
-  </div>
-
-  <!-- Lote Monitores Philips y BGH -->
-  <div class="item periferico">
-    <h3>Lote Monitores Philips y BGH</h3>
-    <img src="images/lote_monitores.jpeg" alt="Lote Monitores Philips y BGH">
-    <p class="precio">$20.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%20Monitores" target="_blank">Contactar por WhatsApp</a>
-    <button onclick="abrirModal('modal-lote-monitores')">Ver más</button>
-  </div>
-
-  <!-- Lote gabinetes blancos retro -->
-  <div class="item lote">
-    <h3>Lote Gabinetes Blancos Retro</h3>
-    <img src="images/lote_gabinetes.jpeg" alt="Lote Gabinetes Blancos Retro">
-    <p class="precio">$10.000</p>
-    <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20me%20interesa%20Lote%20Gabinetes"
+</body>
+</html>
