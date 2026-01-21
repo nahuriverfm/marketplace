@@ -5,413 +5,191 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
   <link rel="stylesheet" href="style.css?v=12">
-  <style>
-    /* GENERAL */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #8A2BE2;
-      color: white;
-      overflow-x: hidden;
-    }
-
-    /* HEADER */
-    header {
-      background: #7B1FA2;
-      text-align: center;
-    }
-
-    .banner img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-    }
-
-    /* LAYOUT */
-    .layout {
-      display: flex;
-      min-height: calc(100vh - 200px);
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 220px;
-      padding: 15px;
-      background: #6A1B9A;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      flex-shrink: 0;
-    }
-
-    /* LOGO EN SIDEBAR */
-    .sidebar-logo {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .sidebar-logo .logo {
-      height: 80px;
-      display: inline-block;
-    }
-
-    /* CATEGORÍAS */
-    .categorias {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px 0;
-    }
-
-    .categorias li {
-      padding: 10px;
-      margin-bottom: 6px;
-      border-radius: 6px;
-      cursor: pointer;
-      background: #9932CC;
-      transition: all 0.2s;
-      text-align: center;
-    }
-
-    .categorias li:hover {
-      background: #8A2BE2;
-      transform: scale(1.02);
-    }
-
-    .categorias li.active {
-      background: #4A148C;
-      font-weight: bold;
-    }
-
-    /* GRID PRODUCTOS */
-    .grid-container {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .item {
-      background: #d8b4f2;
-      color: #000;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      overflow: hidden;
-    }
-
-    .item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    }
-
-    .item img {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      object-fit: cover;
-      height: auto;
-    }
-
-    .item h3 {
-      margin: 0 0 5px 0;
-    }
-
-    .precio {
-      color: #6a1b9a;
-      font-weight: bold;
-      margin-top: 8px;
-      font-size: 1.1rem;
-    }
-
-    .item button {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #7e57c2;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .item button:hover {
-      background: #673ab7;
-    }
-
-    /* MODAL */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.7);
-    }
-
-    .modal-content {
-      background-color: white;
-      color: black;
-      margin: auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .modal-content img {
-      max-width: 100%;
-      margin-bottom: 10px;
-    }
-
-    .modal-content a.whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-
-    .modal-content a.whatsapp-btn:hover {
-      background: #128C7E;
-    }
-
-    .cerrar {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .cerrar:hover {
-      color: black;
-    }
-
-    /* FOOTER */
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #4A148C;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .footer a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 8px;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-right p {
-      margin: 0;
-      text-align: right;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 768px) {
-
-      .layout {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        display: block;
-        padding: 10px;
-        box-shadow: none;
-      }
-
-      .sidebar-logo {
-        margin-bottom: 10px;
-      }
-
-      .categorias {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-      }
-
-      .categorias li {
-        flex: 1 1 45%;
-        text-align: center;
-        margin-bottom: 5px;
-      }
-
-      .grid-container {
-        grid-template-columns: 1fr;
-        padding: 0.5rem;
-      }
-
-      .item {
-        padding: 0.8rem;
-      }
-
-      .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-      }
-
-      .footer-right p {
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 <body>
 
-<header>
-  <div class="banner">
-    <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
-  </div>
-</header>
-
-<div class="layout">
-
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      <img src="images/logo.jpeg" alt="Logo" class="logo">
+  <!-- HEADER -->
+  <header>
+    <div class="banner">
+      <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
     </div>
-    <ul class="categorias">
-      <li onclick="filtrar('all', this)" class="active">Todos</li>
-      <li onclick="filtrar('notebook', this)">Notebook/Netbook</li>
-      <li onclick="filtrar('lote', this)">Lote</li>
-      <li onclick="filtrar('oferta', this)">Oferta</li>
-      <li onclick="filtrar('retro', this)">Retro</li>
-      <li onclick="filtrar('cpu', this)">CPU</li>
-      <li onclick="filtrar('mother', this)">Mother</li>
-      <li onclick="filtrar('grafica', this)">Gráficas</li>
-      <li onclick="filtrar('periferico', this)">Periféricos</li>
-      <li onclick="filtrar('disco', this)">Disco Duro</li>
-    </ul>
-  </aside>
+  </header>
 
-  <div class="grid-container">
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="layout">
 
-    <!-- EJEMPLO: Notebook Samsung -->
-    <div class="item notebook">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- LOGO -->
+      <div class="sidebar-logo">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+      </div>
+
+      <!-- CATEGORÍAS -->
+      <ul class="categorias">
+        <li onclick="filtrar('all', this)" class="active">Todos</li>
+        <li onclick="filtrar('retro', this)">Retro</li>
+        <li onclick="filtrar('netbook', this)">Notebook/Netbook</li>
+        <li onclick="filtrar('lote', this)">Lote</li>
+        <li onclick="filtrar('cpu', this)">CPU</li>
+        <li onclick="filtrar('mother', this)">Mother</li>
+        <li onclick="filtrar('grafica', this)">Gráficas</li>
+        <li onclick="filtrar('periferico', this)">Periféricos</li>
+        <li onclick="filtrar('disco', this)">Disco Duro</li>
+        <li onclick="filtrar('procesadores', this)">Procesadores</li>
+        <li onclick="filtrar('otros', this)">Otros</li>
+        <li onclick="filtrar('oferta', this)">Oferta</li>
+      </ul>
+
+    </aside>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="grid-container">
+
+      <!-- Ejemplo de artículo: Notebook Samsung -->
+      <div class="item netbook">
+        <h3>Notebook Samsung NP-NC110P</h3>
+        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Samsung%20NP-NC110P" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
+      </div>
+
+      <!-- Aquí agregar todos los demás artículos siguiendo la misma estructura -->
+
+      <!-- Cassette + CD Luis Miguel -->
+      <div class="item lote">
+        <h3>Cassette + CD Luis Miguel</h3>
+        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Cassette%20+%20CD%20Luis%20Miguel" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-lote-cassette')">Ver más</button>
+      </div>
+
+      <!-- Notebook Dell Inspiron 1525 -->
+      <div class="item netbook">
+        <h3>Notebook Dell Inspiron 1525</h3>
+        <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Dell%20Inspiron%201525" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-notebook-dell')">Ver más</button>
+      </div>
+
+      <!-- CPU AMD Phenom X2 -->
+      <div class="item cpu">
+        <h3>CPU AMD Phenom X2</h3>
+        <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
+        <p class="precio">$50.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20CPU%20AMD%20Phenom%20X2" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-cpu-phenom')">Ver más</button>
+      </div>
+
+      <!-- CPU Intel Core 2 Quad -->
+      <div class="item cpu">
+        <h3>CPU Intel Core 2 Quad</h3>
+        <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
+        <p class="precio">$20.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20CPU%20Intel%20Core%202%20Quad" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-cpu-core2quad')">Ver más</button>
+      </div>
+
+      <!-- Asus Strix GL702V -->
+      <div class="item netbook">
+        <h3>Asus Strix GL702V</h3>
+        <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
+        <p class="precio">$15.000</p>
+        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Asus%20Strix%20GL702V" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
+      </div>
+
+      <!-- Agregar aquí el resto de los 30 artículos siguiendo el mismo patrón -->
+
+    </div>
+  </div>
+
+  <!-- MODALES -->
+  <div id="modal-notebook-samsung" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal-notebook-samsung')">&times;</span>
       <h3>Notebook Samsung NP-NC110P</h3>
       <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-samsung')">Ver más</button>
+      <p>
+        Prende, da imagen y entra a BIOS sin problema.<br>
+        No tiene disco duro ni cargador.<br>
+        Tiene memoria RAM y batería colocada.<br>
+        Ideal para repuestos o restaurar.<br><br>
+        <strong>Modelo:</strong> NP-NC110P<br>
+        <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
+        <strong>RAM:</strong> 1 GB<br>
+        <strong>Estado:</strong> Para repuesto / scrap<br>
+        <strong>Da imagen</strong><br>
+        <strong>Precio:</strong> $15.000
+      </p>
+      <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Samsung%20NP-NC110P" target="_blank">
+        Contactar por WhatsApp
+      </a>
     </div>
+  </div>
 
-    <!-- EJEMPLO: Cassette + CD -->
-    <div class="item lote">
-      <h3>Cassette + CD Luis Miguel</h3>
-      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-lotemusical')">Ver más</button>
+  <!-- Agregar modales para todos los artículos siguiendo la misma estructura -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
+      <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
     </div>
+    <div class="footer-right">
+      <p>“La paciencia y la constancia traen grandes resultados.”</p>
+    </div>
+  </footer>
 
-    <!-- Agregar aquí el resto de artículos siguiendo la misma estructura -->
+  <!-- SCRIPT -->
+  <script>
+    function filtrar(tag, elem) {
+      const items = document.querySelectorAll('.item');
+      const botones = document.querySelectorAll('.categorias li');
+      botones.forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
 
-  </div>
-</div>
+      if(tag === 'all') {
+        items.forEach(item => item.style.display = 'block');
+        return;
+      }
 
-<!-- MODALES -->
-<div id="modal-samsung" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
-    <h3>Notebook Samsung NP-NC110P</h3>
-    <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-    <p>
-      Prende, da imagen y entra a BIOS sin problema.<br>
-      No tiene disco duro ni cargador.<br>
-      Tiene memoria RAM y batería colocada.<br>
-      Ideal para repuestos o restaurar.<br><br>
-      <strong>Modelo:</strong> NP-NC110P<br>
-      <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
-      <strong>RAM:</strong> 1 GB<br>
-      <strong>Estado:</strong> Para repuesto / scrap<br>
-      <strong>Da imagen</strong><br>
-      <strong>Precio:</strong> $15.000
-    </p>
-    <a class="whatsapp-btn" href="https://wa.me/5491133541569?text=Hola,%20que%20tal,%20me%20interesa%20este%20producto" target="_blank">
-      📲 Consultar por WhatsApp
-    </a>
-  </div>
-</div>
-
-<div id="modal-lotemusical" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-lotemusical')">&times;</span>
-    <h3>Cassette + CD Luis Miguel</h3>
-    <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-    <p>
-      Vendo 2 items juntos:<br>
-      • Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>
-      • CD ”Romances” – Luis Miguel (original, usado)<br>
-      Ambos en buen estado general.<br>
-      <strong>Precio:</strong> $15.000
-    </p>
-    <a class="whatsapp-btn" href="https://wa.me/5491133541569?text=Hola,%20que%20tal,%20me%20interesa%20este%20producto" target="_blank">
-      📲 Consultar por WhatsApp
-    </a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-left">
-    <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
-    <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
-  </div>
-  <div class="footer-right">
-    <p>“La paciencia y la constancia traen grandes resultados.”</p>
-  </div>
-</footer>
-
-<script>
-  function filtrar(tag, elem) {
-    const items = document.querySelectorAll('.item');
-    const botones = document.querySelectorAll('.categorias li');
-    botones.forEach(b => b.classList.remove('active'));
-    elem.classList.add('active');
-
-    if(tag === 'all') {
-      items.forEach(item => item.style.display = 'block');
-      return;
+      items.forEach(item => {
+        item.style.display = item.classList.contains(tag) ? 'block' : 'none';
+      });
     }
 
-    items.forEach(item => {
-      item.style.display = item.classList.contains(tag) ? 'block' : 'none';
-    });
-  }
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
 
-  function abrirModal(id) {
-    document.getElementById(id).style.display = 'block';
-  }
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
 
-  function cerrarModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if(event.target == modal) modal.style.display = 'none';
-    });
-  }
-</script>
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if(event.target == modal) modal.style.display = 'none';
+      });
+    }
+  </script>
 
 </body>
 </html>
