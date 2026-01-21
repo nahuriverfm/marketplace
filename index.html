@@ -25,44 +25,50 @@
     <ul class="categorias">
       <li class="active" onclick="filtrar('all', this)">Todos</li>
       <li onclick="filtrar('netbook', this)">Notebook / Netbook</li>
+      <li onclick="filtrar('cpu', this)">CPU</li>
+      <li onclick="filtrar('mother', this)">Mother</li>
+      <li onclick="filtrar('procesadores', this)">Procesadores</li>
+      <li onclick="filtrar('ram', this)">Memorias RAM</li>
+      <li onclick="filtrar('disco', this)">Discos Duros</li>
+      <li onclick="filtrar('periferico', this)">Periféricos</li>
+      <li onclick="filtrar('consola', this)">Consolas</li>
+      <li onclick="filtrar('retro', this)">Retro</li>
       <li onclick="filtrar('lote', this)">Lotes</li>
-      <li onclick="filtrar('repuesto', this)">Repuestos</li>
-      <li onclick="filtrar('oferta', this)">Ofertas</li>
-      <li onclick="filtrar('vendido', this)">Vendidos</li>
+      <li onclick="filtrar('otros', this)">Otros</li>
     </ul>
   </aside>
 
-  <!-- GRID -->
+  <!-- GRID DE PRODUCTOS -->
   <div class="grid-container">
 
     <!-- SAMSUNG -->
-    <div class="item netbook repuesto">
+    <div class="item netbook">
       <h3>Notebook Samsung NP-NC110P</h3>
-      <img src="images/notebook_samsung_np-nc110p.jpeg">
+      <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Samsung NP-NC110P">
       <p class="precio">$15.000</p>
       <button onclick="abrirModal('modal-samsung')">Ver más</button>
     </div>
 
-    <!-- LOTE LUIS MIGUEL -->
-    <div class="item lote otros">
-      <h3>Lote Luis Miguel (Cassette + CD)</h3>
-      <img src="images/lote_cassette_cd_luis_miguel.jpeg">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-luis')">Ver más</button>
-    </div>
-
     <!-- DELL -->
-    <div class="item netbook funciona">
+    <div class="item netbook">
       <h3>Notebook Dell Inspiron 1525</h3>
-      <img src="images/notebook_dell_inspiron_1525.jpeg">
+      <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Dell Inspiron 1525">
       <p class="precio">$20.000</p>
       <button onclick="abrirModal('modal-dell')">Ver más</button>
     </div>
 
+    <!-- LOTE LUIS MIGUEL -->
+    <div class="item lote retro">
+      <h3>Lote Luis Miguel (Cassette + CD)</h3>
+      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Luis Miguel">
+      <p class="precio">$15.000</p>
+      <button onclick="abrirModal('modal-luis')">Ver más</button>
+    </div>
+
     <!-- ASUS -->
-    <div class="item otros repuesto">
+    <div class="item otros">
       <h3>Asus Strix ROG GL702V</h3>
-      <img src="images/asus_strix_gl702v.jpeg">
+      <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
       <p class="precio">$15.000</p>
       <button onclick="abrirModal('modal-asus')">Ver más</button>
     </div>
@@ -72,6 +78,7 @@
 
 <!-- MODALES -->
 
+<!-- SAMSUNG -->
 <div id="modal-samsung" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
@@ -79,54 +86,57 @@
     <p>
       Prende y da imagen.<br>
       Entra a BIOS.<br>
-      Sin disco ni cargador.<br>
+      No incluye disco ni cargador.<br>
       Ideal para repuestos o restaurar.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Contactar por WhatsApp</a>
   </div>
 </div>
 
+<!-- DELL -->
+<div id="modal-dell" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal('modal-dell')">&times;</span>
+    <h3>Notebook Dell Inspiron 1525</h3>
+    <p>
+      Enciende y da imagen.<br>
+      Incluye memoria RAM.<br><br>
+      ❌ Sin disco duro<br>
+      ❌ Sin batería ni cargador<br>
+      ⚠️ Detalle estético en carcasa (no afecta funcionamiento).<br><br>
+      Precio: $20.000
+    </p>
+    <a href="https://wa.me/5491133541569" target="_blank">Contactar por WhatsApp</a>
+  </div>
+</div>
+
+<!-- LUIS MIGUEL -->
 <div id="modal-luis" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-luis')">&times;</span>
     <h3>Lote Luis Miguel</h3>
     <p>
       Cassette “Amarte Es un Placer” + CD “Romances”.<br>
-      Originales, usados, buen estado.<br><br>
-      Precio: $15.000 (negociable).<br>
+      Originales, usados, buen estado general.<br><br>
+      Precio del lote: $15.000 (negociable).<br>
       Zona Sur: Lomas / Banfield / Temperley.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
   </div>
 </div>
 
-<div id="modal-dell" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-dell')">&times;</span>
-    <h3>Dell Inspiron 1525</h3>
-    <p>
-      Enciende y da imagen.<br>
-      RAM instalada.<br><br>
-      ❌ Sin disco<br>
-      ❌ Sin batería ni cargador<br>
-      ⚠️ Detalle estético en carcasa.<br><br>
-      Precio: $20.000.
-    </p>
-    <a href="https://wa.me/5491133541569" target="_blank">Contactar</a>
-  </div>
-</div>
-
+<!-- ASUS -->
 <div id="modal-asus" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-asus')">&times;</span>
-    <h3>Asus Strix ROG GL702V</h3>
+    <h3>Asus Strix Republic of Gamers GL702V</h3>
     <p>
       Solo carcasa.<br>
-      Sin placa ni componentes.<br>
+      No incluye placa ni componentes internos.<br>
       Pantalla rota.<br>
       Teclado posiblemente reutilizable.<br><br>
-      Ideal repuestos o reconstrucción.<br>
-      Precio: $15.000.
+      Ideal para repuestos o reconstrucción.<br>
+      Precio: $15.000
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
   </div>
