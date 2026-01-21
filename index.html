@@ -15,108 +15,57 @@
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="layout">
+  <!-- GRID DE PRODUCTOS -->
+  <div class="grid-container">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sidebar-logo">
-        <img src="images/logo.jpeg" alt="Logo" class="logo">
-      </div>
-      <ul class="categorias">
-        <li onclick="filtrar('all', this)" class="active">Todos</li>
-        <li onclick="filtrar('retro', this)">Retro</li>
-        <li onclick="filtrar('netbook', this)">Notebook/Netbook</li>
-        <li onclick="filtrar('lote', this)">Lote</li>
-        <li onclick="filtrar('cpu', this)">CPU</li>
-        <li onclick="filtrar('mother', this)">Mother</li>
-        <li onclick="filtrar('grafica', this)">Gráficas</li>
-        <li onclick="filtrar('periferico', this)">Periféricos</li>
-        <li onclick="filtrar('disco', this)">Disco Duro</li>
-        <li onclick="filtrar('procesadores', this)">Procesadores</li>
-        <li onclick="filtrar('otros', this)">Otros</li>
-        <li onclick="filtrar('consola', this)">Consola</li>
-      </ul>
-    </aside>
-
-    <!-- GRID DE PRODUCTOS -->
-    <div class="grid-container">
-
-      <!-- Notebook Samsung NP-NC110P -->
-      <div class="item netbook">
-        <h3>Notebook Samsung NP-NC110P</h3>
-        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-        <p class="descripcion">💻 Ligera y portátil, ideal para estudiar y navegar. Batería aceptable, teclado en buen estado.</p>
-        <p class="precio">$15.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20Notebook%20Samsung%20NP-NC110P.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
-      </div>
-
-      <!-- Procesadores Intel Socket 1155 – Lote funcionando -->
-      <div class="item lote procesadores">
-        <h3>Procesadores Intel Socket 1155 – Lote funcionando</h3>
-        <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel Socket 1155">
-        <p class="descripcion">🔧 Vendo lote de 3 procesadores Intel Socket 1155, usados y probados, en perfecto funcionamiento: Intel Celeron G530, Intel Pentium G620 y Intel Pentium G630. Ideales para técnicos, reparación de PCs o armado de equipos básicos de oficina/estudio. Se venden juntos, no por separado.</p>
-        <p class="precio">$15.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20Lote%20Procesadores%20Intel%20Socket%201155.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="alert('Aquí se mostrarían los detalles del producto')">Ver más</button>
-      </div>
-
-      <!-- Lote auriculares + parlante para PC – Repuesto / reparar -->
-      <div class="item lote periferico">
-        <h3>Lote auriculares + parlante para PC – Repuesto / reparar</h3>
-        <img src="images/lote_auriculares_parlante.jpeg" alt="Lote auriculares + parlante para PC">
-        <p class="descripcion">🎧 Vendo lote de audio para PC, para repuesto o reparar. Incluye 8 auriculares y 1 parlante. Artículos usados, algunos pueden no funcionar. Se venden tal cual están, sin garantía.</p>
-        <p class="precio">$20.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20Lote%20auriculares%20+%20parlante%20para%20PC.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="alert('Aquí se mostrarían los detalles del producto')">Ver más</button>
-      </div>
-
-      <!-- Cassette + CD Luis Miguel -->
-      <div class="item lote retro">
-        <h3>Cassette + CD Luis Miguel</h3>
-        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-        <p class="descripcion">🎵 Perfecto para coleccionistas y fanáticos. Incluye cassette y CD en buen estado.</p>
-        <p class="precio">$15.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Cassette%20+%20CD%20Luis%20Miguel.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="abrirModal('modal-lote-luis-miguel')">Ver más</button>
-      </div>
-
-      <!-- CPU lista para usar – Estudio, YouTube y juegos clásicos -->
-      <div class="item cpu">
-        <h3>CPU lista para usar – Estudio, YouTube y juegos clásicos</h3>
-        <img src="images/cpu_intel_core2quad.jpeg" alt="CPU lista para usar – Estudio, YouTube y juegos clásicos">
-        <p class="descripcion">🖥️ Computadora funcionando correctamente, ideal para estudio, navegación, YouTube y juegos clásicos. Sistema operativo y programas instalados. No incluye monitor, teclado, mouse ni cables.</p>
-        <p class="precio">$20.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20CPU%20Intel%20Core%202%20Quad.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="alert('Aquí se mostrarían los detalles del producto')">Ver más</button>
-      </div>
-
-      <!-- Discos rígidos HDD – Buen estado (CrystalDisk OK) -->
-      <div class="item disco">
-        <h3>Discos rígidos HDD – Buen estado (CrystalDisk OK)</h3>
-        <img src="images/discos_hdd_buen_estado.jpeg" alt="Discos rígidos HDD">
-        <p class="descripcion">💽 Vendo discos rígidos usados, todos probados y en buen estado, con estado “Bueno” en CrystalDisk. Disponibles: Disco rígido 250 GB – $10.000 c/u, Disco rígido 320 GB – $15.000 (CrystalDisk en buen estado). Ideales para PCs de escritorio, almacenamiento secundario, repuestos o armados económicos.</p>
-        <p class="precio">$10.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20los%20Discos%20Rígidos%20HDD.%20¿Están%20disponibles%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="alert('Aquí se mostrarían los detalles del producto')">Ver más</button>
-      </div>
-
-      <!-- Lote placas madre retro / vintage – SCRAP – para repuestos o proyectos -->
-      <div class="item retro lote mother">
-        <h3>Lote placas madre retro / vintage – SCRAP – para repuestos o proyectos</h3>
-        <img src="images/lote_motherboards_retro.jpeg" alt="Lote placas madre retro / vintage – SCRAP – para repuestos o proyectos">
-        <p class="descripcion">🖥️ Todas las placas son SCRAP / no probadas. Los procesadores incluidos tienen funcionamiento desconocido. Ideal para técnicos, restauradores, coleccionistas o proyectos retro. Se vende el lote completo, no se divide.</p>
-        <p class="precio">$50.000</p>
-        <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20Lote%20placas%20madre%20retro.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
-        <button onclick="alert('Aquí se mostrarían los detalles del producto')">Ver más</button>
-      </div>
-
-      <!-- Aquí continuás con el resto de artículos de la misma forma -->
-
+    <!-- Notebook Samsung NP-NC110P -->
+    <div class="item">
+      <h3>Notebook Samsung NP-NC110P</h3>
+      <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
+      <p class="descripcion">💻 Ligera y portátil, ideal para estudiar y navegar. Batería aceptable, teclado en buen estado.</p>
+      <p class="precio">$15.000</p>
+      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20Notebook%20Samsung%20NP-NC110P.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
     </div>
+
+    <!-- Procesadores Intel Socket 1155 – Lote funcionando -->
+    <div class="item">
+      <h3>Procesadores Intel Socket 1155 – Lote funcionando</h3>
+      <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel Socket 1155">
+      <p class="descripcion">🔧 Lote de 3 procesadores Intel Socket 1155, usados y probados: Intel Celeron G530, Pentium G620 y G630. Se venden juntos.</p>
+      <p class="precio">$15.000</p>
+      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20Lote%20Procesadores%20Intel%20Socket%201155.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
+    </div>
+
+    <!-- Lote auriculares + parlante -->
+    <div class="item">
+      <h3>Lote auriculares + parlante para PC</h3>
+      <img src="images/lote_auriculares_parlante.jpeg" alt="Lote auriculares + parlante">
+      <p class="descripcion">🎧 Lote de audio para PC, para repuesto o reparar. Incluye 8 auriculares y 1 parlante. Artículos usados, sin garantía.</p>
+      <p class="precio">$20.000</p>
+      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20el%20Lote%20auriculares%20+%20parlante%20para%20PC.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
+    </div>
+
+    <!-- Cassette + CD Luis Miguel -->
+    <div class="item">
+      <h3>Cassette + CD Luis Miguel</h3>
+      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+      <p class="descripcion">🎵 Perfecto para coleccionistas. Incluye cassette y CD en buen estado.</p>
+      <p class="precio">$15.000</p>
+      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Me%20interesa%20el%20Cassette%20+%20CD%20Luis%20Miguel.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
+    </div>
+
+    <!-- CPU lista para usar -->
+    <div class="item">
+      <h3>CPU lista para usar – Estudio y juegos clásicos</h3>
+      <img src="images/cpu_intel_core2quad.jpeg" alt="CPU lista para usar">
+      <p class="descripcion">🖥️ Computadora funcionando correctamente. Ideal para estudio, navegación, YouTube y juegos clásicos. No incluye monitor, teclado ni mouse.</p>
+      <p class="precio">$20.000</p>
+      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola%20👋!%20Estoy%20interesado%20en%20la%20CPU%20Intel%20Core%202%20Quad.%20¿Está%20disponible%3F" target="_blank">📱 WhatsApp</a>
+    </div>
+
+    <!-- Agregás el resto de los productos igual -->
+
   </div>
 
 </body>
 </html>
-
