@@ -26,15 +26,17 @@
       <li class="active" onclick="filtrar('all', this)">Todos</li>
       <li onclick="filtrar('netbook', this)">Notebook / Netbook</li>
       <li onclick="filtrar('lote', this)">Lotes</li>
-      <li onclick="filtrar('otros', this)">Otros</li>
+      <li onclick="filtrar('repuesto', this)">Repuestos</li>
+      <li onclick="filtrar('oferta', this)">Ofertas</li>
+      <li onclick="filtrar('vendido', this)">Vendidos</li>
     </ul>
   </aside>
 
   <!-- GRID -->
   <div class="grid-container">
 
-    <!-- SAMSUNG (SE DEJA COMO ESTABA) -->
-    <div class="item netbook">
+    <!-- SAMSUNG -->
+    <div class="item netbook repuesto">
       <h3>Notebook Samsung NP-NC110P</h3>
       <img src="images/notebook_samsung_np-nc110p.jpeg">
       <p class="precio">$15.000</p>
@@ -42,7 +44,7 @@
     </div>
 
     <!-- LOTE LUIS MIGUEL -->
-    <div class="item lote">
+    <div class="item lote otros">
       <h3>Lote Luis Miguel (Cassette + CD)</h3>
       <img src="images/lote_cassette_cd_luis_miguel.jpeg">
       <p class="precio">$15.000</p>
@@ -50,7 +52,7 @@
     </div>
 
     <!-- DELL -->
-    <div class="item netbook">
+    <div class="item netbook funciona">
       <h3>Notebook Dell Inspiron 1525</h3>
       <img src="images/notebook_dell_inspiron_1525.jpeg">
       <p class="precio">$20.000</p>
@@ -58,7 +60,7 @@
     </div>
 
     <!-- ASUS -->
-    <div class="item otros">
+    <div class="item otros repuesto">
       <h3>Asus Strix ROG GL702V</h3>
       <img src="images/asus_strix_gl702v.jpeg">
       <p class="precio">$15.000</p>
@@ -70,7 +72,6 @@
 
 <!-- MODALES -->
 
-<!-- SAMSUNG -->
 <div id="modal-samsung" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-samsung')">&times;</span>
@@ -79,60 +80,53 @@
       Prende y da imagen.<br>
       Entra a BIOS.<br>
       Sin disco ni cargador.<br>
-      Ideal repuestos o restaurar.
+      Ideal para repuestos o restaurar.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Contactar por WhatsApp</a>
   </div>
 </div>
 
-<!-- LUIS MIGUEL -->
 <div id="modal-luis" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-luis')">&times;</span>
     <h3>Lote Luis Miguel</h3>
     <p>
-      • Cassette “Amarte Es un Placer” (original, usado)<br>
-      • CD “Romances” (original, usado)<br><br>
-      Buen estado general (ver fotos).<br>
-      Precio por el lote: <strong>$15.000</strong> (negociable).<br><br>
-      Zona Sur – Lomas / Banfield / Temperley.
+      Cassette “Amarte Es un Placer” + CD “Romances”.<br>
+      Originales, usados, buen estado.<br><br>
+      Precio: $15.000 (negociable).<br>
+      Zona Sur: Lomas / Banfield / Temperley.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
   </div>
 </div>
 
-<!-- DELL -->
 <div id="modal-dell" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-dell')">&times;</span>
     <h3>Dell Inspiron 1525</h3>
     <p>
       Enciende y da imagen.<br>
-      RAM instalada.<br>
-      Ideal para repuestos o restaurar.<br><br>
+      RAM instalada.<br><br>
       ❌ Sin disco<br>
       ❌ Sin batería ni cargador<br>
-      ⚠️ Detalle en carcasa cerca de bisagra (no afecta funcionamiento).<br><br>
-      <strong>Precio:</strong> $20.000<br>
-      <strong>Permutas:</strong> RAM, informática, electrónica.
+      ⚠️ Detalle estético en carcasa.<br><br>
+      Precio: $20.000.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Contactar</a>
   </div>
 </div>
 
-<!-- ASUS -->
 <div id="modal-asus" class="modal">
   <div class="modal-content">
     <span class="cerrar" onclick="cerrarModal('modal-asus')">&times;</span>
     <h3>Asus Strix ROG GL702V</h3>
     <p>
       Solo carcasa.<br>
-      Sin placa ni componentes internos.<br>
+      Sin placa ni componentes.<br>
       Pantalla rota.<br>
       Teclado posiblemente reutilizable.<br><br>
-      Carcasa en muy buen estado.<br>
-      Ideal para repuestos o reconstrucción.<br><br>
-      <strong>Precio:</strong> $15.000
+      Ideal repuestos o reconstrucción.<br>
+      Precio: $15.000.
     </p>
     <a href="https://wa.me/5491133541569" target="_blank">Consultar</a>
   </div>
@@ -148,7 +142,8 @@ function filtrar(cat, el) {
   el.classList.add('active');
 
   document.querySelectorAll('.item').forEach(item => {
-    item.style.display = (cat === 'all' || item.classList.contains(cat)) ? 'block' : 'none';
+    item.style.display =
+      (cat === 'all' || item.classList.contains(cat)) ? 'block' : 'none';
   });
 }
 
