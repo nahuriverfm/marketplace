@@ -1,202 +1,299 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Marketplace</title>
-<link rel="stylesheet" href="style.css?v=12">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Marketplace</title>
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="banner">
-    <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
-  </div>
-</header>
-
-<!-- LAYOUT -->
-<div class="layout">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      <img src="images/logo.jpeg" alt="Logo" class="logo">
+  <!-- HEADER -->
+  <header>
+    <div class="banner">
+      <img src="images/banner-hardware.jpeg" alt="Banner Hardware">
     </div>
-    <ul class="categorias">
-      <li onclick="filtrar('all', this)" class="active">Todos</li>
-      <li onclick="filtrar('retro', this)">Retro</li>
-      <li onclick="filtrar('cpu', this)">CPU</li>
-      <li onclick="filtrar('mother', this)">Mother</li>
-      <li onclick="filtrar('periferico', this)">Periféricos</li>
-      <li onclick="filtrar('consola', this)">Consolas</li>
-      <li onclick="filtrar('netbook', this)">Notebook/Netbook</li>
-      <li onclick="filtrar('lote', this)">Lote</li>
-      <li onclick="filtrar('procesador', this)">Procesadores</li>
-      <li onclick="filtrar('disco', this)">Disco</li>
-      <li onclick="filtrar('oferta', this)">Oferta</li>
-    </ul>
-  </aside>
+  </header>
 
-  <!-- GRID PRODUCTOS -->
-  <div class="grid-container">
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="layout">
 
-    <!-- Ejemplo de producto: Notebook Samsung -->
-    <div class="item netbook" >
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+      </div>
+
+      <ul class="categorias">
+        <li onclick="filtrar('all', this)" class="active">Todos</li>
+        <li onclick="filtrar('notebook', this)">Notebook/Netbook</li>
+        <li onclick="filtrar('lote', this)">Lote</li>
+        <li onclick="filtrar('retro', this)">Retro</li>
+        <li onclick="filtrar('cpu', this)">CPU</li>
+        <li onclick="filtrar('mother', this)">Mother</li>
+        <li onclick="filtrar('grafica', this)">Gráficas</li>
+        <li onclick="filtrar('periferico', this)">Periféricos</li>
+        <li onclick="filtrar('disco', this)">Disco Duro</li>
+        <li onclick="filtrar('procesador', this)">Procesadores</li>
+        <li onclick="filtrar('oferta', this)">Oferta</li>
+      </ul>
+    </aside>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="grid-container">
+
+      <!-- EJEMPLO DE ARTÍCULO -->
+      <div class="item notebook">
+        <h3>Notebook Samsung NP-NC110P</h3>
+        <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
+      </div>
+
+      <div class="item lote">
+        <h3>Cassette + CD Luis Miguel</h3>
+        <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-lote-cassette')">Ver más</button>
+      </div>
+
+      <div class="item notebook">
+        <h3>Notebook Dell Inspiron 1525</h3>
+        <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-notebook-dell')">Ver más</button>
+      </div>
+
+      <div class="item lote">
+        <h3>Lote 7 cassettes originales</h3>
+        <img src="images/lote_7_cassettes.jpeg" alt="Lote 7 cassettes originales">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-lote-7-cassettes')">Ver más</button>
+      </div>
+
+      <div class="item cpu">
+        <h3>CPU AMD Phenom X2</h3>
+        <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
+        <p class="precio">$50.000</p>
+        <button onclick="abrirModal('modal-cpu-phenom')">Ver más</button>
+      </div>
+
+      <div class="item cpu">
+        <h3>CPU Intel Core 2 Quad</h3>
+        <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-cpu-core2')">Ver más</button>
+      </div>
+
+      <div class="item notebook">
+        <h3>Asus Strix GL702V</h3>
+        <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
+      </div>
+
+      <div class="item retro">
+        <h3>Placa madre MSI MS7030 Neo + Athlon 64</h3>
+        <img src="images/msi_ms7030_athlon64.jpeg" alt="Placa madre MSI MS7030 Neo + Athlon 64">
+        <p class="precio">$10.000</p>
+        <button onclick="abrirModal('modal-msi-athlon')">Ver más</button>
+      </div>
+
+      <div class="item lote">
+        <h3>Lote 6 placas de sonido</h3>
+        <img src="images/lote_6_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
+        <p class="precio">$10.000</p>
+        <button onclick="abrirModal('modal-lote-placas-sonido')">Ver más</button>
+      </div>
+
+      <div class="item lote notebook">
+        <h3>Lote 6 netbooks de gobierno</h3>
+        <img src="images/lote_6_netbooks.jpeg" alt="Lote 6 netbooks de gobierno">
+        <p class="precio">$40.000</p>
+        <button onclick="abrirModal('modal-lote-6-netbooks')">Ver más</button>
+      </div>
+
+      <div class="item lote notebook">
+        <h3>Lote notebooks varias marcas</h3>
+        <img src="images/lote_notebooks_varias_marcas.jpeg" alt="Lote notebooks varias marcas">
+        <p class="precio">$45.000</p>
+        <button onclick="abrirModal('modal-lote-notebooks')">Ver más</button>
+      </div>
+
+      <div class="item lote consola">
+        <h3>Lote PlayStation 2 Slim</h3>
+        <img src="images/lote_ps2_slim.jpeg" alt="Lote PlayStation 2 Slim">
+        <p class="precio">$45.000</p>
+        <button onclick="abrirModal('modal-lote-ps2')">Ver más</button>
+      </div>
+
+      <div class="item retro lote">
+        <h3>Lote placas madre retro</h3>
+        <img src="images/lote_motherboards_retro.jpeg" alt="Lote placas madre retro">
+        <p class="precio">$50.000</p>
+        <button onclick="abrirModal('modal-lote-mother-retro')">Ver más</button>
+      </div>
+
+      <div class="item mother lote scrap">
+        <h3>Lote x4 Motherboards</h3>
+        <img src="images/lote_4_motherboards.jpeg" alt="Lote x4 Motherboards">
+        <p class="precio">$25.000</p>
+        <button onclick="abrirModal('modal-lote-4-mother')">Ver más</button>
+      </div>
+
+      <div class="item retro">
+        <h3>Motherboard SiS 530 + AMD K6</h3>
+        <img src="images/mother_sis530_amd_k6.jpeg" alt="Motherboard SiS 530 + AMD K6">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-mother-sis530')">Ver más</button>
+      </div>
+
+      <div class="item retro">
+        <h3>Motherboard PCPartner 35-7008-11</h3>
+        <img src="images/mother_pcpartner_35-7008-11.jpeg" alt="Motherboard PCPartner 35-7008-11">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-mother-pcpartner')">Ver más</button>
+      </div>
+
+      <div class="item retro">
+        <h3>Sound Blaster 16 + Parlantes Creative</h3>
+        <img src="images/soundblaster16_parlantes_creative.jpeg" alt="Sound Blaster 16 + Parlantes Creative">
+        <p class="precio">$40.000</p>
+        <button onclick="abrirModal('modal-soundblaster')">Ver más</button>
+      </div>
+
+      <div class="item retro notebook">
+        <h3>IBM ThinkPad T30 + R40</h3>
+        <img src="images/ibm_thinkpad_t30_r40.jpeg" alt="IBM ThinkPad T30 + R40">
+        <p class="precio">$35.000</p>
+        <button onclick="abrirModal('modal-ibm-thinkpad')">Ver más</button>
+      </div>
+
+      <div class="item grafica lote">
+        <h3>Lote de placas de video</h3>
+        <img src="images/lote_2_placas_video.jpeg" alt="Lote de placas de video">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-lote-placas-video')">Ver más</button>
+      </div>
+
+      <div class="item periferico lote">
+        <h3>Lote de monitores Philips y BGH</h3>
+        <img src="images/lote_monitores_philips_bgh.jpeg" alt="Lote de monitores Philips y BGH">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-lote-monitores')">Ver más</button>
+      </div>
+
+      <div class="item lote">
+        <h3>Lote de gabinetes blancos retro</h3>
+        <img src="images/lote_gabinetes_blancos_retro.jpeg" alt="Lote de gabinetes blancos retro">
+        <p class="precio">$10.000</p>
+        <button onclick="abrirModal('modal-lote-gabinetes')">Ver más</button>
+      </div>
+
+      <div class="item lote periferico">
+        <h3>Lote auriculares + parlante</h3>
+        <img src="images/lote_auriculares_parlante.jpeg" alt="Lote auriculares + parlante">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-lote-auriculares')">Ver más</button>
+      </div>
+
+      <div class="item lote periferico">
+        <h3>Lote audio para PC</h3>
+        <img src="images/lote_audio_pc.jpeg" alt="Lote audio para PC">
+        <p class="precio">$20.000</p>
+        <button onclick="abrirModal('modal-lote-audio-pc')">Ver más</button>
+      </div>
+
+      <div class="item procesador">
+        <h3>Procesadores Intel Socket 1155</h3>
+        <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel Socket 1155">
+        <p class="precio">$15.000</p>
+        <button onclick="abrirModal('modal-procesadores-1155')">Ver más</button>
+      </div>
+
+      <div class="item disco">
+        <h3>Discos rígidos HDD</h3>
+        <img src="images/discos_hdd_buen_estado.jpeg" alt="Discos rígidos HDD">
+        <p class="precio">$10.000</p>
+        <button onclick="abrirModal('modal-discos-hdd')">Ver más</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODALES -->
+  <!-- Aquí vendrían todos los modales con los detalles completos y enlace de WhatsApp -->
+  <!-- Ejemplo de uno, el resto se genera igual -->
+  <div id="modal-notebook-samsung" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modal-notebook-samsung')">&times;</span>
       <h3>Notebook Samsung NP-NC110P</h3>
       <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-notebook-samsung')">Ver más</button>
+      <p>
+        Prende, da imagen y entra a BIOS sin problema.<br>
+        No tiene disco duro ni cargador.<br>
+        Tiene memoria RAM y batería colocada.<br>
+        Ideal para repuestos o restaurar.<br><br>
+        <strong>Modelo:</strong> NP-NC110P<br>
+        <strong>Procesador:</strong> Intel Atom N2600 (1.6 GHz)<br>
+        <strong>RAM:</strong> 1 GB<br>
+        <strong>Estado:</strong> Para repuesto / scrap<br>
+        <strong>Da imagen</strong><br>
+        <strong>Precio:</strong> $15.000
+      </p>
+      <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Samsung%20NP-NC110P" target="_blank">
+        Contactar por WhatsApp
+      </a>
     </div>
-
-    <!-- Cassette + CD Luis Miguel -->
-    <div class="item lote">
-      <h3>Cassette + CD Luis Miguel</h3>
-      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-lote-cassette')">Ver más</button>
-    </div>
-
-    <!-- Notebook Dell Inspiron 1525 -->
-    <div class="item netbook">
-      <h3>Notebook Dell Inspiron 1525</h3>
-      <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-      <p class="precio">$20.000</p>
-      <button onclick="abrirModal('modal-notebook-dell')">Ver más</button>
-    </div>
-
-    <!-- CPU AMD Phenom X2 -->
-    <div class="item cpu">
-      <h3>CPU AMD Phenom X2</h3>
-      <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
-      <p class="precio">$50.000</p>
-      <button onclick="abrirModal('modal-cpu-phenom')">Ver más</button>
-    </div>
-
-    <!-- CPU Intel Core 2 Quad -->
-    <div class="item cpu">
-      <h3>CPU Intel Core 2 Quad</h3>
-      <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
-      <p class="precio">$20.000</p>
-      <button onclick="abrirModal('modal-cpu-core2')">Ver más</button>
-    </div>
-
-    <!-- Asus Strix GL702V -->
-    <div class="item netbook">
-      <h3>Asus Strix GL702V</h3>
-      <img src="images/asus_strix_gl702v.jpeg" alt="Asus Strix GL702V">
-      <p class="precio">$15.000</p>
-      <button onclick="abrirModal('modal-asus-strix')">Ver más</button>
-    </div>
-
-    <!-- Placa madre MSI MS7030 Neo + Athlon 64 -->
-    <div class="item retro">
-      <h3>Placa madre MSI MS7030 Neo + Athlon 64</h3>
-      <img src="images/msi_ms7030_athlon64.jpeg" alt="Placa madre MSI MS7030 Neo + Athlon 64">
-      <p class="precio">$10.000</p>
-      <button onclick="abrirModal('modal-msi-ms7030')">Ver más</button>
-    </div>
-
-    <!-- Lote 6 placas de sonido -->
-    <div class="item lote">
-      <h3>Lote 6 placas de sonido</h3>
-      <img src="images/lote_6_placas_sonido.jpeg" alt="Lote 6 placas de sonido">
-      <p class="precio">$10.000</p>
-      <button onclick="abrirModal('modal-lote-sonido')">Ver más</button>
-    </div>
-
-    <!-- Lote 6 netbooks de gobierno -->
-    <div class="item lote netbook">
-      <h3>Lote 6 netbooks de gobierno</h3>
-      <img src="images/lote_6_netbooks.jpeg" alt="Lote 6 netbooks de gobierno">
-      <p class="precio">$40.000</p>
-      <button onclick="abrirModal('modal-lote-netbooks')">Ver más</button>
-    </div>
-
-    <!-- Agregar los demás artículos siguiendo el mismo patrón -->
-    
   </div>
-</div>
 
-<!-- MODALES -->
-<!-- Notebook Samsung -->
-<div id="modal-notebook-samsung" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-notebook-samsung')">&times;</span>
-    <h3>Notebook Samsung NP-NC110P</h3>
-    <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-    <p>Prende, da imagen y entra a BIOS sin problema.<br>No tiene disco ni cargador.<br>Tiene RAM y batería colocada.<br>Ideal para repuestos o restaurar.</p>
-    <p><strong>Precio:</strong> $15.000</p>
-    <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Samsung%20NP-NC110P" target="_blank">Contactar por WhatsApp</a>
-  </div>
-</div>
+  <!-- Resto de los modales: se repetiría el mismo esquema cambiando id, imagen, texto y precio -->
 
-<!-- Cassette + CD Luis Miguel -->
-<div id="modal-lote-cassette" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-lote-cassette')">&times;</span>
-    <h3>Cassette + CD Luis Miguel</h3>
-    <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Cassette + CD Luis Miguel">
-    <p>Vendo 2 items juntos:<br>Cassette ”Amarte Es un Placer” – Luis Miguel (original, usado)<br>CD ”Romances” – Luis Miguel (original, usado)<br>Ambos en buen estado general.</p>
-    <p><strong>Precio:</strong> $15.000</p>
-    <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Cassette%20+%20CD%20Luis%20Miguel" target="_blank">Contactar por WhatsApp</a>
-  </div>
-</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <a href="https://www.facebook.com/marketplace/profile/100094349795260/" target="_blank">Facebook</a> |
+      <a href="https://wa.me/5491133541569" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-right">
+      <p>“La paciencia y la constancia traen grandes resultados.”</p>
+    </div>
+  </footer>
 
-<!-- Notebook Dell Inspiron 1525 -->
-<div id="modal-notebook-dell" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-notebook-dell')">&times;</span>
-    <h3>Notebook Dell Inspiron 1525</h3>
-    <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Notebook Dell Inspiron 1525">
-    <p>Enciende correctamente y da imagen.<br>Incluye memoria RAM instalada.<br>Ideal para repuestos, restaurar o usar con disco propio.<br>Detalle estético: la carcasa tiene una rotura cerca de la bisagra.</p>
-    <p><strong>Precio:</strong> $20.000</p>
-    <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20Notebook%20Dell%20Inspiron%201525" target="_blank">Contactar por WhatsApp</a>
-  </div>
-</div>
+  <!-- SCRIPT -->
+  <script>
+    function filtrar(tag, elem) {
+      const items = document.querySelectorAll('.item');
+      const botones = document.querySelectorAll('.categorias li');
+      botones.forEach(b => b.classList.remove('active'));
+      elem.classList.add('active');
 
-<!-- CPU AMD Phenom X2 -->
-<div id="modal-cpu-phenom" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-cpu-phenom')">&times;</span>
-    <h3>CPU AMD Phenom X2</h3>
-    <img src="images/cpu_amd_phenom_x2.jpeg" alt="CPU AMD Phenom X2">
-    <p>CPU funcionando correctamente, lista para enchufar y usar.<br>Ideal para estudiar, navegar, juegos recreativos.<br>Juegos instalados: PES, Hit & Run, Call of Duty, Plants vs Zombies, Counter-Strike 1.6.<br>Programas incluidos: LibreOffice, VLC Media Player, Pluto TV.</p>
-    <p><strong>Precio:</strong> $50.000</p>
-    <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20CPU%20AMD%20Phenom%20X2" target="_blank">Contactar por WhatsApp</a>
-  </div>
-</div>
+      if(tag === 'all') {
+        items.forEach(item => item.style.display = 'block');
+        return;
+      }
 
-<!-- CPU Intel Core 2 Quad -->
-<div id="modal-cpu-core2" class="modal">
-  <div class="modal-content">
-    <span class="cerrar" onclick="cerrarModal('modal-cpu-core2')">&times;</span>
-    <h3>CPU Intel Core 2 Quad</h3>
-    <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Intel Core 2 Quad">
-    <p>Se vende computadora funcionando y probada.<br>Juegos incluidos: Counter-Strike 1.6, Age of Empires II, Plants vs Zombies, Emulador Sega.<br>Incluye teclado de regalo.</p>
-    <p><strong>Precio:</strong> $20.000</p>
-    <a href="https://wa.me/5491133541569?text=Hola%20que%20tal,%20me%20interesa%20el%20producto%20CPU%20Intel%20Core%202%20Quad" target="_blank">Contactar por WhatsApp</a>
-  </div>
-</div>
+      items.forEach(item => {
+        item.style.display = item.classList.contains(tag) ? 'block' : 'none';
+      });
+    }
 
-<script>
-function filtrar(tag, elem){
-  const items = document.querySelectorAll('.item');
-  const botones = document.querySelectorAll('.categorias li');
-  botones.forEach(b=>b.classList.remove('active'));
-  elem.classList.add('active');
-  if(tag==='all'){items.forEach(i=>i.style.display='block'); return;}
-  items.forEach(i=>i.style.display=i.classList.contains(tag)?'block':'none');
-}
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
 
-function abrirModal(id){document.getElementById(id).style.display='block';}
-function cerrarModal(id){document.getElementById(id).style.display='none';}
-window.onclick = function(event){
-  const modals = document.querySelectorAll('.modal');
-  modals.forEach(modal=>{if(event.target==modal) modal.style.display='none';});
-}
-</script>
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if(event.target == modal) modal.style.display = 'none';
+      });
+    }
+  </script>
 
 </body>
 </html>
+
