@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO/TU_REPO
+  repo: tu_usuario_github/tu_repo
   branch: main
 
 media_folder: "images/uploads"
