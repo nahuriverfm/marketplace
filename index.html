@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 
@@ -17,24 +17,34 @@
 
   <!-- CATEGORÍAS (BURBUJAS) -->
   <div class="categories">
-    <div class="category" onclick="showCategory('all')"><span>Todo</span></div>
-    <div class="category" onclick="showCategory('cpu')"><span>CPU</span></div>
-    <div class="category" onclick="showCategory('notebook')"><span>Notebook</span></div>
-    <div class="category" onclick="showCategory('lote')"><span>Lotes</span></div>
-    <div class="category" onclick="showCategory('otros')"><span>Otros</span></div>
-
-    <!-- Nuevas categorías -->
-    <div class="category" onclick="showCategory('consola')"><span>Consolas</span></div>
-    <div class="category" onclick="showCategory('placa')"><span>Placas</span></div>
-    <div class="category" onclick="showCategory('disco')"><span>Discos</span></div>
-    <div class="category" onclick="showCategory('procesador')"><span>Procesadores</span></div>
-    <div class="category" onclick="showCategory('ram')"><span>RAM</span></div>
-    <div class="category" onclick="showCategory('retro')"><span>Retro</span></div>
-    <div class="category" onclick="showCategory('periferico')"><span>Periféricos</span></div>
+    <div class="category cpu" onclick="showCategory('cpu')"><span>CPU</span></div>
+    <div class="category notebook" onclick="showCategory('notebook')"><span>Notebook</span></div>
+    <div class="category lote" onclick="showCategory('lote')"><span>Lotes</span></div>
+    <div class="category otros" onclick="showCategory('otros')"><span>Otros</span></div>
+    <div class="category consola" onclick="showCategory('consola')"><span>Consolas</span></div>
+    <div class="category placa" onclick="showCategory('placa')"><span>Placas</span></div>
+    <div class="category disco" onclick="showCategory('disco')"><span>Discos</span></div>
+    <div class="category procesador" onclick="showCategory('procesador')"><span>Procesadores</span></div>
+    <div class="category ram" onclick="showCategory('ram')"><span>RAM</span></div>
+    <div class="category retro" onclick="showCategory('retro')"><span>Retro</span></div>
+    <div class="category periferico" onclick="showCategory('periferico')"><span>Periféricos</span></div>
+    <div class="category all" onclick="showCategory('all')"><span>Todo</span></div>
   </div>
 
   <!-- GRID DE PRODUCTOS -->
   <div class="grid-container" id="productos"></div>
+
+  <!-- MODAL VER MÁS -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-descripcion"></p>
+      <p id="modal-precio"></p>
+      <a id="modal-wpp" class="btn-whatsapp" href="" target="_blank">WhatsApp</a>
+    </div>
+  </div>
 
   <!-- SCRIPT FILTRO -->
   <script>
@@ -46,6 +56,25 @@
           item.style.display = 'none';
         }
       });
+    }
+
+    function openModal(titulo, descripcion, precio, imagen, link) {
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('modal-img').src = 'images/' + imagen;
+      document.getElementById('modal-titulo').innerText = titulo;
+      document.getElementById('modal-descripcion').innerText = descripcion;
+      document.getElementById('modal-precio').innerText = '$' + precio;
+      document.getElementById('modal-wpp').href = link;
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('modal')) {
+        closeModal();
+      }
     }
   </script>
 
@@ -63,7 +92,10 @@
             <img src="images/${p.imagen}" alt="${p.titulo}">
             <p class="descripcion">${p.descripcion}</p>
             <p class="precio">$${p.precio}</p>
-            <a class="btn-whatsapp" href="${p.link}" target="_blank">WhatsApp</a>
+            <div class="botones">
+              <a class="btn-whatsapp" href="${p.link}" target="_blank">WhatsApp</a>
+              <button class="btn-vermas" onclick="openModal('${p.titulo}', '${p.descripcion}', '${p.precio}', '${p.imagen}', '${p.link}')">Ver más</button>
+            </div>
           </div>
         `;
       });
@@ -74,6 +106,3 @@
 
 </body>
 </html>
-
-
-   
