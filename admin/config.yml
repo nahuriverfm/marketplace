@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: tu_usuario_github/tu_repo
+  repo: repo: nahuriverfm/marketplace
   branch: main
 
 media_folder: "images/uploads"
