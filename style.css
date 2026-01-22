@@ -27,17 +27,17 @@ header {
    CATEGORÍAS (BURBUJAS)
 ========================= */
 .categories {
-  display: flex;             /* flex para 1 fila */
+  display: flex;            
   gap: 10px;
   padding: 0.5rem 1rem;
   background: #6A1B9A;
-  overflow-x: auto;          /* scroll horizontal si no entran todas */
-  white-space: nowrap;       /* evita salto de línea */
+  overflow-x: auto;         
+  white-space: nowrap;      
 }
 
 .category {
-  flex: 0 0 90px;            /* ancho fijo */
-  height: 90px;              /* cuadrado */
+  flex: 0 0 90px;           
+  height: 90px;             
   position: relative;
   background: #d8b4f2;
   color: #000;
@@ -83,7 +83,7 @@ header {
 ========================= */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* más columnas visibles */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
   gap: 10px;
   padding: 0.5rem;
 }
@@ -103,7 +103,7 @@ header {
 }
 
 .item img {
-  max-height: 100px; /* imágenes más chicas */
+  max-height: 100px; 
   margin-bottom: 6px;
   object-fit: cover;
 }
@@ -148,39 +148,4 @@ header {
 @media(max-width: 768px) {
 
   .categories {
-    gap: 8px;
-  }
-
-  .category {
-    flex: 0 0 70px;
-    height: 70px;
-    font-size: 0.75rem;
-  }
-
-  .category::before {
-    width: 40%;
-    height: 30%;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 8px;
-  }
-
-  .item img {
-    max-height: 80px;
-  }
-
-  .descripcion {
-    font-size: 0.75rem;
-  }
-
-  .precio {
-    font-size: 0.9rem;
-  }
-
-  .btn-whatsapp {
-    font-size: 0.75rem;
-    padding: 5px 8px;
-  }
-}
+    gap: 8px
