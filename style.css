@@ -27,17 +27,17 @@ header {
    CATEGORÍAS (BURBUJAS)
 ========================= */
 .categories {
-  display: flex;            
+  display: flex;             
   gap: 10px;
   padding: 0.5rem 1rem;
   background: #6A1B9A;
-  overflow-x: auto;         
-  white-space: nowrap;      
+  overflow-x: auto;          
+  white-space: nowrap;       
 }
 
 .category {
-  flex: 0 0 90px;           
-  height: 90px;             
+  flex: 0 0 90px;            
+  height: 90px;              
   position: relative;
   background: #d8b4f2;
   color: #000;
@@ -51,26 +51,43 @@ header {
   align-items: center;
   text-align: center;
   font-size: 0.85rem;
+  overflow: hidden;
 }
 
 .category span {
   position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
+  z-index: 2; /* siempre encima de la imagen */
   width: 90%;
 }
 
-/* espacio para imagen futura dentro de la burbuja */
+/* imagen real en la categoría */
 .category::before {
   content: "";
   display: block;
-  width: 50%;
-  height: 35%;
-  background: #b388eb;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 60%;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
-  margin: 0 auto 8px auto;
+  z-index: 1;
 }
+
+/* asignar imagenes por categoría */
+.category.cpu::before { background-image: url('images/cpu.jfif'); }
+.category.notebook::before { background-image: url('images/notebook.jfif'); }
+.category.lote::before { background-image: url('images/lote comp.jfif'); }
+.category.otros::before { background-image: url('images/otros.jfif'); }
+.category.consola::before { background-image: url('images/consola.avif'); }
+.category.placa::before { background-image: url('images/placa.jfif'); }
+.category.disco::before { background-image: url('images/disco duro 1.webp'); }
+.category.procesador::before { background-image: url('images/procesadores.jfif'); }
+.category.ram::before { background-image: url('images/memoria ram.jfif'); }
+.category.retro::before { background-image: url('images/retro.jfif'); }
+.category.periferico::before { background-image: url('images/periferico.jfif'); }
 
 .category:hover {
   transform: translateY(-4px);
@@ -148,4 +165,39 @@ header {
 @media(max-width: 768px) {
 
   .categories {
-    gap: 8px
+    gap: 8px;
+  }
+
+  .category {
+    flex: 0 0 70px;
+    height: 70px;
+    font-size: 0.75rem;
+  }
+
+  .category::before {
+    width: 50%;
+    height: 50%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .item img {
+    max-height: 80px;
+  }
+
+  .descripcion {
+    font-size: 0.75rem;
+  }
+
+  .precio {
+    font-size: 0.9rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+}
