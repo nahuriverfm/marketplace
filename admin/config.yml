@@ -19,3 +19,4 @@ collections:
       - { label: "Categoría", name: "categoria", widget: "select", options: ["cpu","notebook","lote","otros"] }
       - { label: "Imagen", name: "imagen", widget: "image" }
       - { label: "Link WhatsApp", name: "link", widget: "string" }
+
