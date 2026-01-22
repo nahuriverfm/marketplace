@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -52,7 +52,6 @@
   <!-- SCRIPT PRODUCTOS DINÁMICOS -->
   <script>
     async function cargarProductos() {
-      // Link raw directo a tu JSON en GitHub
       const response = await fetch('https://raw.githubusercontent.com/nahuriverfm/marketplace/main/_productos/productos.json'); 
       const productos = await response.json(); 
       const cont = document.getElementById('productos');
@@ -75,3 +74,6 @@
 
 </body>
 </html>
+
+
+   
