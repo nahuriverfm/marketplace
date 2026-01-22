@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Marketplace</title>
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -88,12 +88,13 @@
       productos.forEach(p => {
         cont.innerHTML += `
           <div class="item ${p.categoria}">
+            ${p.vendido ? '<div class="vendido">VENDIDO</div>' : ''}
             <h3>${p.titulo}</h3>
             <img src="images/${p.imagen}" alt="${p.titulo}">
             <p class="descripcion">${p.descripcion}</p>
             <p class="precio">$${p.precio}</p>
             <div class="botones">
-              <a class="btn-whatsapp" href="${p.link}" target="_blank">WhatsApp</a>
+              <a class="btn-whatsapp" href="${p.vendido ? '#' : p.link}" target="_blank" ${p.vendido ? 'style="pointer-events:none;opacity:0.6;"' : ''}>WhatsApp</a>
               <button class="btn-vermas" onclick="openModal('${p.titulo}', '${p.descripcion}', '${p.precio}', '${p.imagen}', '${p.link}')">Ver más</button>
             </div>
           </div>
@@ -106,4 +107,3 @@
 
 </body>
 </html>
-
