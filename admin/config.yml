@@ -1,9 +1,5 @@
-local_backend: true
-
 backend:
-  name: github
-  repo: repo: nahuriverfm/marketplace
-  branch: main
+  name: test-repo
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -20,4 +16,3 @@ collections:
       - { label: "Categoría", name: "category", widget: "select", options: ["cpu", "notebook", "lote", "otros"] }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
-
