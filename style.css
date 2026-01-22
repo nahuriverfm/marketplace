@@ -28,16 +28,16 @@ header {
 ========================= */
 .categories {
   display: flex;             /* flex para 1 fila */
-  gap: 14px;
-  padding: 1rem;
+  gap: 10px;
+  padding: 0.5rem 1rem;
   background: #6A1B9A;
   overflow-x: auto;          /* scroll horizontal si no entran todas */
-  white-space: nowrap;       /* evita que salten a otra línea */
+  white-space: nowrap;       /* evita salto de línea */
 }
 
 .category {
-  flex: 0 0 120px;           /* ancho fijo */
-  height: 120px;             /* altura igual al ancho → cuadrado */
+  flex: 0 0 90px;            /* ancho fijo */
+  height: 90px;              /* cuadrado */
   position: relative;
   background: #d8b4f2;
   color: #000;
@@ -50,6 +50,7 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 0.85rem;
 }
 
 .category span {
@@ -64,8 +65,8 @@ header {
 .category::before {
   content: "";
   display: block;
-  width: 60%;
-  height: 40%;
+  width: 50%;
+  height: 35%;
   background: #b388eb;
   border-radius: 10px;
   margin: 0 auto 8px auto;
@@ -78,22 +79,19 @@ header {
 }
 
 /* =========================
-   GRID PRODUCTOS
+   GRID PRODUCTOS MÁS COMPACTOS
 ========================= */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* más columnas visibles */
+  gap: 10px;
+  padding: 0.5rem;
 }
 
-/* =========================
-   ITEM PRODUCTO
-========================= */
 .item {
   background: #d8b4f2;
   color: #000;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 12px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -105,23 +103,22 @@ header {
 }
 
 .item img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  max-height: 100px; /* imágenes más chicas */
+  margin-bottom: 6px;
   object-fit: cover;
 }
 
 .descripcion {
-  font-size: 0.9em;
+  font-size: 0.8rem;
   color: #333;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .precio {
   color: #6a1b9a;
   font-weight: bold;
-  font-size: 1.1rem;
-  margin: 8px 0;
+  font-size: 1rem;
+  margin: 4px 0;
 }
 
 /* =========================
@@ -132,11 +129,11 @@ header {
   background: #7e57c2;
   color: white;
   font-weight: bold;
-  padding: 10px 16px;
+  padding: 6px 10px;
   border-radius: 10px;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .btn-whatsapp:hover {
@@ -151,12 +148,39 @@ header {
 @media(max-width: 768px) {
 
   .categories {
-    flex-wrap: nowrap;     /* mantener 1 fila */
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .category {
+    flex: 0 0 70px;
+    height: 70px;
+    font-size: 0.75rem;
+  }
+
+  .category::before {
+    width: 40%;
+    height: 30%;
   }
 
   .grid-container {
-    grid-template-columns: 1fr;
-    padding: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .item img {
+    max-height: 80px;
+  }
+
+  .descripcion {
+    font-size: 0.75rem;
+  }
+
+  .precio {
+    font-size: 0.9rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.75rem;
+    padding: 5px 8px;
   }
 }
