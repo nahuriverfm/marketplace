@@ -88,7 +88,7 @@ header {
 .category.procesador::before { background-image: url('images/procesadores.jfif'); }
 .category.ram::before { background-image: url('images/memoria ram.jfif'); }
 .category.retro::before { background-image: url('images/retro.jfif'); }
-.category.periferico::before { background-image: url('images/periferico.jfif'); }
+.category.periferico::before { background-image: url('images/perifericos 1.jfif'); }
 
 .category:hover {
   transform: translateY(-4px);
