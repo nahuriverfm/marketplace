@@ -25,70 +25,7 @@
   </div>
 
   <!-- GRID DE PRODUCTOS -->
-  <div class="grid-container">
-
-    <!-- NOTEBOOK -->
-    <div class="item notebook">
-      <h3>Notebook Samsung NP-NC110P</h3>
-      <img src="images/notebook_samsung_np-nc110p.jpeg" alt="Notebook Samsung NP-NC110P">
-      <p class="descripcion">💻 Ligera y portátil, ideal para estudiar y navegar.</p>
-      <p class="precio">$15.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20Notebook%20Samsung%20NP-NC110P" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- LOTE PROCESADORES -->
-    <div class="item lote">
-      <h3>Procesadores Intel Socket 1155</h3>
-      <img src="images/lote_procesadores_1155.jpeg" alt="Procesadores Intel 1155">
-      <p class="descripcion">🔧 Lote funcionando (G530, G620, G630)</p>
-      <p class="precio">$15.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20procesadores%201155" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- LOTE AUDIO -->
-    <div class="item lote">
-      <h3>Lote auriculares + parlante</h3>
-      <img src="images/lote_auriculares_parlante.jpeg" alt="Lote audio PC">
-      <p class="descripcion">🎧 Para repuesto o reparar</p>
-      <p class="precio">$20.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20audio" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- OTROS -->
-    <div class="item otros">
-      <h3>Cassette + CD Luis Miguel</h3>
-      <img src="images/lote_cassette_cd_luis_miguel.jpeg" alt="Luis Miguel cassette CD">
-      <p class="descripcion">🎵 Coleccionable</p>
-      <p class="precio">$15.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20cassette%20y%20CD%20Luis%20Miguel" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- CPU -->
-    <div class="item cpu">
-      <h3>CPU lista para usar</h3>
-      <img src="images/cpu_intel_core2quad.jpeg" alt="CPU Core 2 Quad">
-      <p class="descripcion">🖥️ Ideal estudio y juegos clásicos</p>
-      <p class="precio">$20.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20CPU%20lista" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- NOTEBOOK -->
-    <div class="item notebook">
-      <h3>Notebook Dell Inspiron 1525</h3>
-      <img src="images/notebook_dell_inspiron_1525.jpeg" alt="Dell Inspiron 1525">
-      <p class="precio">$20.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20Dell%201525" target="_blank">WhatsApp</a>
-    </div>
-
-    <!-- LOTE NOTEBOOKS -->
-    <div class="item lote">
-      <h3>Lote notebooks para repuesto</h3>
-      <img src="images/lote_notebooks_varias_marcas.jpeg" alt="Lote notebooks">
-      <p class="precio">$45.000</p>
-      <a class="btn-whatsapp" href="https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20notebooks" target="_blank">WhatsApp</a>
-    </div>
-
-  </div>
+  <div class="grid-container" id="productos"></div>
 
   <!-- SCRIPT FILTRO -->
   <script>
@@ -103,5 +40,30 @@
     }
   </script>
 
+  <!-- SCRIPT PRODUCTOS DINÁMICOS -->
+  <script>
+    async function cargarProductos() {
+      // Ajustá esta ruta si usás archivos .md convertidos a JSON
+      const response = await fetch('_productos/productos.json'); 
+      const productos = await response.json(); 
+      const cont = document.getElementById('productos');
+
+      productos.forEach(p => {
+        cont.innerHTML += `
+          <div class="item ${p.categoria}">
+            <h3>${p.titulo}</h3>
+            <img src="images/${p.imagen}" alt="${p.titulo}">
+            <p class="descripcion">${p.descripcion}</p>
+            <p class="precio">$${p.precio}</p>
+            <a class="btn-whatsapp" href="${p.link}" target="_blank">WhatsApp</a>
+          </div>
+        `;
+      });
+    }
+
+    cargarProductos();
+  </script>
+
 </body>
 </html>
+
