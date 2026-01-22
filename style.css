@@ -79,7 +79,7 @@ header {
 }
 
 .category.cpu::before { background-image: url('images/cpu.jfif'); }
-.category.notebook::before { background-image: url('images/notebook.jfif'); }
+.category.notebook::before { background-image: url('images/notebook.webp'); }
 .category.lote::before { background-image: url('images/lote comp.jfif'); }
 .category.otros::before { background-image: url('images/otros.jpg'); }
 .category.consola::before { background-image: url('images/consola.avif'); }
