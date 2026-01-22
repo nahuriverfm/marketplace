@@ -43,5 +43,194 @@
     "imagen": "cpu_intel_core2quad.jpeg",
     "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20CPU%20lista",
     "vendido": true
+  },
+  {
+    "titulo": "CPU lista para usar – Estudio, juegos y entretenimiento",
+    "descripcion": "CPU funcionando correctamente, lista para enchufar y usar. Incluye Windows 10 64 bits y juegos instalados.",
+    "precio": "50000",
+    "categoria": "cpu",
+    "imagen": "cpu_amd_phenom_x2.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20CPU%20lista%20AMD%20Phenom",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote de 6 netbooks de gobierno",
+    "descripcion": "Todas las netbooks se venden PARA REPUESTO O REPARAR. Algunas prenden y otras no. Ideal para técnicos o repuestos.",
+    "precio": "40000",
+    "categoria": "lote",
+    "imagen": "lote_netbooks_gobierno.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20netbooks",
+    "vendido": false
+  },
+  {
+    "titulo": "Repetidor Wi-Fi",
+    "descripcion": "Repetidor usado, funciona correctamente. Ideal para ampliar señal de internet en casa o trabajos de hobby.",
+    "precio": "20000",
+    "categoria": "otros",
+    "imagen": "repetidor_wifi.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20repetidor%20Wi-Fi",
+    "vendido": false
+  },
+  {
+    "titulo": "Placa Intel E210882 – Slot DDR2",
+    "descripcion": "Placa base con slot DDR2, incluye procesador integrado y cooler. Funciona y da imagen.",
+    "precio": "10000",
+    "categoria": "placa",
+    "imagen": "placa_intel_e210882.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20placa%20Intel%20E210882",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote 16 Notebooks y Repuesto",
+    "descripcion": "Se vende lote completo de 16 artículos, entre notebooks dañadas y funcionales. Ideal para reparación, repuestos o scrap.",
+    "precio": "100000",
+    "categoria": "lote",
+    "imagen": "lote_16_notebooks.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%2016%20notebooks",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote 7 cassettes originales",
+    "descripcion": "Lote de cassettes originales, usados, ideal para coleccionistas. Incluye Mercedes Sosa, María Marta Serra Lima, Horacio Guaraní, Carlos Gardel y Julio Iglesias.",
+    "precio": "20000",
+    "categoria": "otros",
+    "imagen": "lote_7_cassettes.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%207%20cassettes",
+    "vendido": false
+  },
+  {
+    "titulo": "Placa madre MSI MS7030 Neo + Athlon 64 800",
+    "descripcion": "Placa retro con Athlon 64 800. Funciona y da imagen. Algunos capacitores hinchados, ideal para restauración o colección.",
+    "precio": "10000",
+    "categoria": "placa",
+    "imagen": "placa_msi_ms7030_athlon64.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20placa%20MSI%20MS7030%20Neo",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote 6 placas de sonido – Genius y genéricas",
+    "descripcion": "Se venden 6 placas de sonido, 2 Genius y 4 genéricas. Para revisar y reparar, ideal para técnicos o proyectos.",
+    "precio": "10000",
+    "categoria": "placa",
+    "imagen": "lote_6_placas_sonido.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%206%20placas%20de%20sonido",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote PlayStation 2 Slim – 4 unidades",
+    "descripcion": "Lote de 4 PS2 Slim para repuesto. Ninguna enciende. Ideal para técnicos o revendedores.",
+    "precio": "45000",
+    "categoria": "consola",
+    "imagen": "lote_ps2_slim.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%204%20PS2",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote placas madre retro / vintage – SCRAP",
+    "descripcion": "Todas las placas son SCRAP / no probadas. Ideal para técnicos, coleccionistas o proyectos retro.",
+    "precio": "50000",
+    "categoria": "placa",
+    "imagen": "lote_placas_retro.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20placas%20retro",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote x4 Motherboards – Asus / Gigabyte / ASRock / MSI",
+    "descripcion": "Lote de 4 placas madre para repuesto. Todas no funcionan, ideal para técnicos o reparación.",
+    "precio": "25000",
+    "categoria": "placa",
+    "imagen": "lote_4_motherboards.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%204%20motherboards",
+    "vendido": false
+  },
+  {
+    "titulo": "Motherboard SiS 530 + AMD K6",
+    "descripcion": "Placa retro con video integrado y AMD K6. Enciende y da imagen. Para repuestos o restauración.",
+    "precio": "20000",
+    "categoria": "placa",
+    "imagen": "motherboard_sis_530_amd_k6.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20motherboard%20SiS%20530",
+    "vendido": false
+  },
+  {
+    "titulo": "Motherboard PCPartner AT",
+    "descripcion": "Motherboard formato AT, con pila instalada, corrosión cerca de la pila. No probada, ideal para repuestos retro.",
+    "precio": "20000",
+    "categoria": "placa",
+    "imagen": "motherboard_pcpartner_at.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20motherboard%20PCPartner%20AT",
+    "vendido": false
+  },
+  {
+    "titulo": "Sound Blaster 16 + Parlantes Creative",
+    "descripcion": "Lote de audio retro para PC antiguo. Se vende como lote, ideal para DOS / retrocomputación.",
+    "precio": "40000",
+    "categoria": "otros",
+    "imagen": "soundblaster16_parlantes.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20audio%20retro",
+    "vendido": false
+  },
+  {
+    "titulo": "IBM ThinkPad T30 + R40",
+    "descripcion": "Dos notebooks IBM ThinkPad para repuestos. Se venden juntas o por separado.",
+    "precio": "35000",
+    "categoria": "notebook",
+    "imagen": "lote_thinkpad_t30_r40.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20ThinkPad",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote placas de video – Para reparar / repuestos",
+    "descripcion": "Lote de 2 placas de video, una da video pero calienta y se tilda, la otra solo para repuesto.",
+    "precio": "20000",
+    "categoria": "placa",
+    "imagen": "lote_2_vgas.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20placas%20de%20video",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote de monitores Philips y BGH",
+    "descripcion": "Lote de 2 monitores para repuesto / reparar. No se venden por separado.",
+    "precio": "20000",
+    "categoria": "otros",
+    "imagen": "lote_monitores_philips_bgh.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20monitores",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote de gabinetes blancos retro",
+    "descripcion": "Gabinetes usados, sin componentes internos, ideales para restauración o repuesto retro. Se venden todos juntos.",
+    "precio": "10000",
+    "categoria": "otros",
+    "imagen": "lote_gabinetes_blancos.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20gabinetes",
+    "vendido": false
+  },
+  {
+    "titulo": "Disco rígido 250 GB",
+    "descripcion": "Disco rígido usado, probado y en buen estado (CrystalDisk OK). Ideal para PCs de escritorio, almacenamiento secundario o repuestos.",
+    "precio": "10000",
+    "categoria": "disco",
+    "imagen": "disco_250gb_1.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20disco%20rígido%20250GB",
+    "vendido": false
+  },
+  {
+    "titulo": "Disco rígido 250 GB",
+    "descripcion": "Disco rígido usado, probado y en buen estado (CrystalDisk OK). Ideal para PCs de escritorio, almacenamiento secundario o repuestos.",
+    "precio": "10000",
+    "categoria": "disco",
+    "imagen": "disco_250gb_2.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20disco%20rígido%20250GB",
+    "vendido": false
+  },
+  {
+    "titulo": "Disco rígido 320 GB",
+    "descripcion": "Disco rígido usado, probado y en buen estado (CrystalDisk OK). Ideal para PCs de escritorio, almacenamiento secundario o repuestos.",
+    "precio": "15000",
+    "categoria": "disco",
+    "imagen": "disco_320gb.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20disco%20rígido%20320GB",
+    "vendido": false
   }
 ]
