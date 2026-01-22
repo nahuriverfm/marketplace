@@ -4,7 +4,7 @@ backend:
   branch: main
 
 media_folder: "images"
-public_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "productos"
@@ -15,7 +15,7 @@ collections:
     fields:
       - { label: "Título", name: "titulo", widget: "string" }
       - { label: "Descripción", name: "descripcion", widget: "text" }
-      - { label: "Precio", name: "precio", widget: "string" }
+      - { label: "Precio", name: "precio", widget: "number" }
       - { label: "Categoría", name: "categoria", widget: "select", options: ["cpu","notebook","lote","otros"] }
       - { label: "Imagen", name: "imagen", widget: "image" }
       - { label: "Link WhatsApp", name: "link", widget: "string" }
