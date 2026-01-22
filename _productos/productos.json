@@ -1,1 +1,59 @@
+[
+  {
+    "titulo": "Notebook Samsung NP-NC110P",
+    "descripcion": "💻 Ligera y portátil, ideal para estudiar y navegar.",
+    "precio": "15000",
+    "categoria": "notebook",
+    "imagen": "notebook_samsung_np-nc110p.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20Notebook%20Samsung%20NP-NC110P"
+  },
+  {
+    "titulo": "Procesadores Intel Socket 1155",
+    "descripcion": "🔧 Lote funcionando (G530, G620, G630)",
+    "precio": "15000",
+    "categoria": "lote",
+    "imagen": "lote_procesadores_1155.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20procesadores%201155"
+  },
+  {
+    "titulo": "Lote auriculares + parlante",
+    "descripcion": "🎧 Para repuesto o reparar",
+    "precio": "20000",
+    "categoria": "lote",
+    "imagen": "lote_auriculares_parlante.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20audio"
+  },
+  {
+    "titulo": "Cassette + CD Luis Miguel",
+    "descripcion": "🎵 Coleccionable",
+    "precio": "15000",
+    "categoria": "otros",
+    "imagen": "lote_cassette_cd_luis_miguel.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20cassette%20y%20CD%20Luis%20Miguel"
+  },
+  {
+    "titulo": "CPU lista para usar",
+    "descripcion": "🖥️ Ideal estudio y juegos clásicos",
+    "precio": "20000",
+    "categoria": "cpu",
+    "imagen": "cpu_intel_core2quad.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20CPU%20lista"
+  },
+  {
+    "titulo": "Notebook Dell Inspiron 1525",
+    "descripcion": "",
+    "precio": "20000",
+    "categoria": "notebook",
+    "imagen": "notebook_dell_inspiron_1525.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20la%20Dell%201525"
+  },
+  {
+    "titulo": "Lote notebooks para repuesto",
+    "descripcion": "",
+    "precio": "45000",
+    "categoria": "lote",
+    "imagen": "lote_notebooks_varias_marcas.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20notebooks"
+  }
+]
 
