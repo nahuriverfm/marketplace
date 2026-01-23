@@ -63,7 +63,5 @@
       "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%20netbooks",
       "vendido": false
     }
-    // Los demás productos los podés copiar con la misma estructura:
-    // "imagenes": ["archivo1.jpeg", "archivo2.jpeg"] si querés múltiples imágenes
   ]
 }
