@@ -20,4 +20,10 @@ collections:
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Precio", name: "precio", widget: "number" }
               - { label: "Descripción", name: "descripcion", widget: "text" }
-              - { label: "Imagen", name: "imagen", widget: "image" }
+              - label: "Imágenes"
+                name: "imagenes"
+                widget: "list"
+                field:
+                  label: "Imagen"
+                  name: "imagen"
+                  widget: "image"
