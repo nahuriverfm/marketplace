@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: nahuriverfm/marketplace
+  name: git-gateway
   branch: main
 
 media_folder: "img/productos"
