@@ -23,7 +23,5 @@ collections:
               - label: "Imágenes"
                 name: "imagenes"
                 widget: "list"
-                field:
-                  label: "Imagen"
-                  name: "imagen"
-                  widget: "image"
+                fields:   # ✅ corregido de field a fields
+                  - { label: "Imagen", name: "imagen", widget: "image" }
