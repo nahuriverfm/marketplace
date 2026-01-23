@@ -1,22 +1,24 @@
 backend:
   name: github
-  repo: nahuriverfm/marketplace
+  repo: TU_USUARIO/TU_REPO
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "img/productos"
+public_folder: "/img/productos"
 
 collections:
   - name: "productos"
     label: "Productos"
-    folder: "_productos"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título", name: "titulo", widget: "string" }
-      - { label: "Descripción", name: "descripcion", widget: "text" }
-      - { label: "Precio", name: "precio", widget: "number" }
-      - { label: "Categoría", name: "categoria", widget: "select", options: ["cpu","notebook","lote","otros"] }
-      - { label: "Imagen", name: "imagen", widget: "image" }
-      - { label: "Link WhatsApp", name: "link", widget: "string" }
-
+    files:
+      - file: "productos.json"
+        label: "Lista de productos"
+        name: "lista"
+        fields:
+          - label: "Productos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Precio", name: "precio", widget: "number" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
