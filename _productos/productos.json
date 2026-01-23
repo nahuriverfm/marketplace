@@ -82,4 +82,29 @@
   },
   {
     "titulo": "Lote 16 Notebooks y Repuesto",
-    "descripcion": "Se vende lote completo de 16 artículos, entre notebooks dañadas y funcionales. Ideal para
+    "descripcion": "Se vende lote completo de 16 artículos, entre notebooks dañadas y funcionales. Ideal para reparación, repuestos o scrap.",
+    "precio": "100000",
+    "categoria": "notebook",
+    "imagen": "lote_16_notebooks.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%2016%20notebooks",
+    "vendido": false
+  },
+  {
+    "titulo": "Lote 7 cassettes originales",
+    "descripcion": "Lote de cassettes originales, usados, ideal para coleccionistas.",
+    "precio": "20000",
+    "categoria": "otros",
+    "imagen": "lote_7_cassettes.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20lote%20de%207%20cassettes",
+    "vendido": false
+  },
+  {
+    "titulo": "Disco rígido 320 GB",
+    "descripcion": "Disco rígido usado, probado y en buen estado (CrystalDisk OK).",
+    "precio": "15000",
+    "categoria": "disco",
+    "imagen": "disco_320gb.jpeg",
+    "link": "https://wa.me/5491133541569?text=Hola!%20Me%20interesa%20el%20disco%20rígido%20320GB",
+    "vendido": false
+  }
+]
