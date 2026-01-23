@@ -1,41 +1,112 @@
-<script>
-async function cargarProductos() {
-  const response = await fetch('https://raw.githubusercontent.com/nahuriverfm/marketplace/main/_productos/productos.json'); 
-  const data = await response.json(); 
-  const productos = data.items; // <-- Ahora accedemos a "items"
-  const cont = document.getElementById('productos');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Marketplace</title>
+  <link rel="stylesheet" href="style.css?v=18">
+</head>
+<body>
 
-  productos.forEach(p => {
-    const imgPrincipal = p.imagenes && p.imagenes.length > 0 ? p.imagenes[0] : ''; // Primera imagen
-    cont.innerHTML += `
-      <div class="item ${p.categoria}">
-        ${p.vendido ? '<div class="vendido">VENDIDO</div>' : ''}
-        <h3>${p.titulo}</h3>
-        <img src="img/productos/${imgPrincipal}" alt="${p.titulo}">
-        <p class="descripcion">${p.descripcion}</p>
-        <p class="precio">$${p.precio}</p>
-        <div class="botones">
-          <a class="btn-whatsapp" href="${p.vendido ? '#' : p.link}" target="_blank" ${p.vendido ? 'style="pointer-events:none;opacity:0.6;"' : ''}>WhatsApp</a>
-          <button class="btn-vermas" onclick="openModal('${p.titulo}', '${p.descripcion}', '${p.precio}', ${JSON.stringify(p.imagenes)}, '${p.link}')">Ver más</button>
-        </div>
-      </div>
-    `;
-  });
-}
+  <!-- HEADER -->
+  <header>
+    <div class="banner">
+      <img src="images/image.jpg" alt="Banner Hardware">
+    </div>
+  </header>
 
-function openModal(titulo, descripcion, precio, imagenes, link) {
-  document.getElementById('modal').style.display = 'block';
-  const modalImg = document.getElementById('modal-img');
+  <!-- CATEGORÍAS (BURBUJAS) -->
+  <div class="categories">
+    <div class="category all" onclick="showCategory('all')"><span>Todo</span></div>
+    <div class="category cpu" onclick="showCategory('cpu')"><span>CPU</span></div>
+    <div class="category notebook" onclick="showCategory('notebook')"><span>Notebook</span></div>
+    <div class="category lote" onclick="showCategory('lote')"><span>Lotes</span></div>
+    <div class="category consola" onclick="showCategory('consola')"><span>Consolas</span></div>
+    <div class="category placa" onclick="showCategory('placa')"><span>Placas</span></div>
+    <div class="category disco" onclick="showCategory('disco')"><span>Discos</span></div>
+    <div class="category procesador" onclick="showCategory('procesador')"><span>Procesadores</span></div>
+    <div class="category ram" onclick="showCategory('ram')"><span>RAM</span></div>
+    <div class="category retro" onclick="showCategory('retro')"><span>Retro</span></div>
+    <div class="category periferico" onclick="showCategory('periferico')"><span>Periféricos</span></div>
+    <div class="category otros" onclick="showCategory('otros')"><span>Otros</span></div>
+  </div>
 
-  // Si hay varias imágenes, usamos la primera
-  const imgPrincipal = imagenes && imagenes.length > 0 ? imagenes[0] : '';
-  modalImg.src = 'img/productos/' + imgPrincipal;
+  <!-- GRID DE PRODUCTOS -->
+  <div class="grid-container" id="productos"></div>
 
-  document.getElementById('modal-titulo').innerText = titulo;
-  document.getElementById('modal-descripcion').innerText = descripcion;
-  document.getElementById('modal-precio').innerText = '$' + precio;
-  document.getElementById('modal-wpp').href = link;
-}
+  <!-- MODAL VER MÁS -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <h3 id="modal-titulo"></h3>
+      <p id="modal-descripcion"></p>
+      <p id="modal-precio"></p>
+      <a id="modal-wpp" class="btn-whatsapp" href="" target="_blank">WhatsApp</a>
+    </div>
+  </div>
 
-cargarProductos();
-</script>
+  <!-- SCRIPT FILTRO Y MODAL -->
+  <script>
+    function showCategory(category) {
+      document.querySelectorAll('.item').forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('modal')) {
+        closeModal();
+      }
+    }
+  </script>
+
+  <!-- SCRIPT PRODUCTOS DINÁMICOS -->
+  <script>
+    async function cargarProductos() {
+      const response = await fetch('https://raw.githubusercontent.com/nahuriverfm/marketplace/main/_productos/productos.json'); 
+      const data = await response.json(); 
+      const productos = data.items;
+      const cont = document.getElementById('productos');
+
+      productos.forEach(p => {
+        const imgPrincipal = p.imagenes && p.imagenes.length > 0 ? p.imagenes[0] : '';
+        cont.innerHTML += `
+          <div class="item ${p.categoria}">
+            ${p.vendido ? '<div class="vendido">VENDIDO</div>' : ''}
+            <h3>${p.titulo}</h3>
+            <img src="img/productos/${imgPrincipal}" alt="${p.titulo}">
+            <p class="descripcion">${p.descripcion}</p>
+            <p class="precio">$${p.precio}</p>
+            <div class="botones">
+              <a class="btn-whatsapp" href="${p.vendido ? '#' : p.link}" target="_blank" ${p.vendido ? 'style="pointer-events:none;opacity:0.6;"' : ''}>WhatsApp</a>
+              <button class="btn-vermas" onclick="openModal(${JSON.stringify(p.titulo)}, ${JSON.stringify(p.descripcion)}, ${JSON.stringify(p.precio)}, ${JSON.stringify(p.imagenes)}, ${JSON.stringify(p.link)})">Ver más</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function openModal(titulo, descripcion, precio, imagenes, link) {
+      document.getElementById('modal').style.display = 'block';
+      const imgPrincipal = imagenes && imagenes.length > 0 ? imagenes[0] : '';
+      document.getElementById('modal-img').src = 'img/productos/' + imgPrincipal;
+      document.getElementById('modal-titulo').innerText = titulo;
+      document.getElementById('modal-descripcion').innerText = descripcion;
+      document.getElementById('modal-precio').innerText = '$' + precio;
+      document.getElementById('modal-wpp').href = link;
+    }
+
+    cargarProductos();
+  </script>
+
+</body>
+</html>
