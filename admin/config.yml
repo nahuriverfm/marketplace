@@ -24,19 +24,17 @@ collections:
                 name: "categoria"
                 widget: "select"
                 options:
-                  - all
-                  - CPU
-                  - notebook
-                  - laptop
-                  - consolas
-                  - placas
-                  - disco
-                  - procesadores
-                  - RAM
-                  - retro
-                  - periféricos
-                  - otros
-                  - lote
+                  - "cpu"
+                  - "notebook"
+                  - "lote"
+                  - "consola"
+                  - "placa"
+                  - "disco"
+                  - "procesador"
+                  - "ram"
+                  - "retro"
+                  - "periferico"
+                  - "otros"
               - label: "Imágenes"
                 name: "imagenes"
                 widget: "list"
