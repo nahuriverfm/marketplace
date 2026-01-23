@@ -20,8 +20,27 @@ collections:
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Precio", name: "precio", widget: "number" }
               - { label: "Descripción", name: "descripcion", widget: "text" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options:
+                  - all
+                  - CPU
+                  - notebook
+                  - laptop
+                  - consolas
+                  - placas
+                  - disco
+                  - procesadores
+                  - RAM
+                  - retro
+                  - periféricos
+                  - otros
+                  - lote
               - label: "Imágenes"
                 name: "imagenes"
                 widget: "list"
-                fields:   # ✅ corregido de field a fields
+                fields:
                   - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Link WhatsApp", name: "link", widget: "string" }
+              - { label: "Vendido", name: "vendido", widget: "boolean", default: false }
